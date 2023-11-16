@@ -1,0 +1,16 @@
+Hosting: InfinityFree
+FTP: Filezilla
+Domain: rumbling.infinityfreeapp.com
+Account Label: Attack On Titan - Rumbling
+
+Username: if0_35430226
+Password: D1NxOOZCjjP
+Hostname: ftpupload.net
+Port: 21
+IP: 185.27.134.55
+Home Directory: /home/vol18_1/infinityfree.com/if0_35430226
+Hosting Volume: vol18_1
+
+MySQL Database Name: if0_35430226_rumbling
+MySQL Hostname: sql201.infinityfree.com
+MySQL Port: 3306
