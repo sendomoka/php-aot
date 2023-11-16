@@ -4,35 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/login2.css">
+    <link href='https://fonts.googleapis.com/css?family=Source Serif Pro' rel='stylesheet'>
 </head>
 <body>
 
+<video autoplay muted loop id="bgvideo">
+  <source src="assets/eren-speech-cutted.mp4" type="video/mp4">
+</video>
+
 <div class="container">
-        <div class="left">
-        <img src="assets/aot-cutted.png" alt="Image">
-        </div>
-
-        <div class="right">
         <img src="assets/aot-logo.png" alt="logo">
-            <div class="loginform">
-            <h1>Login</h1>
-            <form>
-                <p>Your Nickname</p> 
-                <input type="text" name="nickname" placeholder="Nickname" required>
-                <p>Your Password</p>
-                <input type="password" name="password" placeholder="Password" required>
-                <a href="tes.php" style="color: white; text-decoration: none; margin-bottom: 10px; display: block; text-align: right;"><u>Forget Your Password</u></a> <br>
-                <input type="submit" name="signin" value="Login">
-                <p>Don't have an account? <a href="register.php" style="color: white; text-decoration: none;"><u>Register</u></a></p>
-            </form>
-            </div>
-           
-        </div>
-        
-    </div>
+            <h1>Beware the Rumbling!</h1>
+            <p>As the Wall Titans unleashed by Eren approach trampling the earth, the survivors can only warn of the apocalyptic force that will soon destroy everything in it’s path.</p>
+            <form action="includes/login.inc.php" method="post">
+                <input type="text" name="nickname" placeholder="YOUR NICKNAME">
+                <input type="password" name="password" placeholder="YOUR PASSWORD">
+                <input type="submit" name="login" value="ENTER">
+            <a href="register.php">CREATE ACCOUNT</a>
 
-    <audio autoplay loop id="audio">
+ </div>
+           
+
+    <audio autoplay id="audio">
         <source src="assets/eren-speech.mp3" type="audio/mpeg">
     </audio>
 
