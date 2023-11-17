@@ -3,9 +3,9 @@ FTP: Filezilla
 Domain: rumbling.infinityfreeapp.com
 Account Label: Attack On Titan - Rumbling
 
+Hostname: ftpupload.net
 Username: if0_35430226
 Password: D1NxOOZCjjP
-Hostname: ftpupload.net
 Port: 21
 IP: 185.27.134.55
 Home Directory: /home/vol18_1/infinityfree.com/if0_35430226

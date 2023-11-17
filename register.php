@@ -8,11 +8,9 @@
     <link href='https://fonts.googleapis.com/css?family=Source Serif Pro' rel='stylesheet'>
 </head>
 <body>
-
-<video autoplay muted loop id="bgvideo">
-  <source src="assets/aot-transform.mp4" type="video/mp4">
-</video>
-
+    <video autoplay muted loop id="bgvideo">
+        <source src="https://ecom22a.com/rumbling/aot-transform.mp4" type="video/mp4">
+    </video>
 <div class="container">
         <img src="assets/aot-logo.png" alt="logo">
             <h1>The Founder Emerges!</h1>
