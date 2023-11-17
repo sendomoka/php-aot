@@ -32,7 +32,7 @@
             </div>
 
                 <input type="submit" name="register" value="CREATE ACCOUNT">
-            <a href="register.php">ALREADY HAVE AN ACCOUNT ?</a>
+            <a href="login.php">ALREADY HAVE AN ACCOUNT ?</a>
 
  </div>
         
