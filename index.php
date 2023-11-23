@@ -9,8 +9,7 @@
 <body>
     <?php include 'components/header.php'; ?>
         
-        <h1>tes</h1>
-        <!-- <img src="assets/aot-path.png" alt=""> -->
+        
     
     <!-- <?php include 'components/footer.php'; ?> -->
 </body>
