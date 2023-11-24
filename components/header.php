@@ -24,6 +24,7 @@
 .left-side img{
     height: 100px;
     width: 100%;
+    margin-top: 1rem;
 }
 
 .right-side {
@@ -63,7 +64,7 @@
     <div class="right-side">
     <img src="assets/Vector.png" alt="User Image">
     <div class="user-info">
-        <p class="username">User Name</p>
+        <p class="username">Jehian Athaya</p>
         <p class="role">Marley</p>
     </div>
 </div>

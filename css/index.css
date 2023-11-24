@@ -1,10 +1,197 @@
 body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    background-image: url('../assets/path.png');
+    background-image: url('../assets/main-bg.png');
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
+    background-attachment: fixed;
     margin: 0;
     padding: 0;
+}
+
+img{
+    width: 30%;
+    height: auto;
+}
+
+.container1{
+    display: flex; 
+    height: 675px;
+    margin-top: 90px;
+    position: relative;
+    margin-left: 170px;
+}
+
+.container1left{
+    width: 450px;
+    margin-right: 200px;
+}
+
+.container1right{
+    width: auto;
+}
+
+.container1left h1{
+    color: white;
+    font-family: 'Source Serif Pro';
+    font-size: 63px;
+    text-align: left;
+    margin-bottom: -10px;
+}
+
+.container1left p{
+    margin-bottom: 40px;
+    color: #928F8E;
+    font-family: 'Source Serif Pro';
+    text-align: justify;
+    font-size: 20px;
+}
+
+img[name="ereh"]{
+    width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    z-index: 1;
+}
+
+img[name="ereh"]:hover {
+    width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.hover-container {
+    width: 200px;
+    height: 125px;
+    margin: 0 auto;
+}
+
+.hover-text {
+    display: none;
+}
+
+.show-text {
+    display: block !important;
+}
+
+.click-text {
+    margin-left: 20px;
+    display: inline-block;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    color: #928F8E;
+    font-weight: bold;
+    position: relative;
+    z-index: 2;
+}
+
+.button {
+    margin-left: 20px;
+    display: inline-block;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    background-color: #A43F39;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.button:hover {
+    background-color: #666;
+    color: red;
+}
+
+.container1left img:hover{
+    cursor: pointer;
+}
+
+.container1left button{
+    background-color: transparent;
+}
+
+.container1right img{
+    width: 80%;
+    height: auto;
+}
+
+.container1bottom {
+    position: absolute;
+    bottom: 0;
+    left: 45%;
+    transform: translateX(-100%);
+}
+
+.container1bottom p{
+    color: #928F8E;
+    font-family: 'Source Serif Pro';
+    font-weight: bold;
+    font-style: italic;
+    text-align: center;
+    font-size: 25px;
+    margin-top: 20px;
+}
+
+.container1bottom img{
+    width: 30%;
+    margin-left: 50px;
+    margin-bottom: 20px;
+}
+
+.container2{
+    background-image: url('../assets/aot-path.png');
+    background-size:contain;
+    background-repeat: no-repeat;
+    height: auto;
+    padding-top: 300px;
+}
+
+.speech{
+    width: auto;
+    margin-right: 60px;
+}
+
+.speechtext{
+    width: 700px;
+}
+
+.speech img{
+    width: 100%;
+    height: auto;
+}
+
+.speechtext p{
+    margin-top: 130px;
+    color: #928F8E;
+    font-family: 'Source Serif Pro';
+    text-align: justify;
+    font-size: 20px;
+}
+
+.speechtext small{
+    color: #928F8E;
+    font-family: 'Source Serif Pro';
+    text-align: center;
+}
+
+.container2bottom {
+    position: absolute;
+    bottom: -200%;
+    left: 50%;
+    transform: translateX(-100%);
+}
+
+.container2bottom img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
 }
