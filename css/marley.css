@@ -1,0 +1,21 @@
+.marleydesc{
+    background-image: url('../assets/marleybg.png');
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.marleychar{
+    background-image: url('../assets/main-bg.png');
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.marleydesc, .marleychar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}

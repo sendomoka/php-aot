@@ -36,21 +36,5 @@
 
  </div>
         
-        <!-- <div class="right">
-
-        <video autoplay loop id="video">
-            <source src="assets/aot-transform.mp4" type="video/mp4">
-        </video>
-
-        </div>
-    </div>
-    <script>
-
-window.addEventListener('load', function() {
-    var video = document.getElementById('video');
-    video.play();
-}); -->
-
-    </script>
 </body>
 </html>
