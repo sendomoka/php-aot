@@ -11,7 +11,7 @@
     <?php include 'components/header.php'; ?>
     
         <div class="container1">
-        <div class="container1left">
+            <div class="container1left">
             <table>
 
                 <tr>
@@ -46,11 +46,10 @@
                         </div>
                     </td>
                 </tr>
-
             </table>
-        </div>
+            </div>
 
-        <div class="container1right">
+            <div class="container1right">
             <table>
                 <tr>
                     <td>
@@ -58,9 +57,9 @@
                     </td>
                 </tr>
             </table>
-        </div>
+            </div>
 
-        <div class="container1bottom">
+            <div class="container1bottom">
             <table>
                 <tr>
                     <td><p>Story Begin<p></td>
@@ -70,24 +69,19 @@
                         <img src="assets/arrow-down.png" alt="arrow">
                     </td>
                 </tr>
-            </table>
-            
+            </table>   
+            </div>
         </div>
 
-    </div>
+    <div class="container2">  
 
-    <div class="container2">
-        
-
-        <div class="speech">
+        <div class="upperimage">
             <table>
-
                 <tr>
                     <td>
-                        <img src="assets/speech.png" alt="">
+                        <img src="assets/willyspeech.png" alt="">
                     </td>
                 </tr>
-
             </table>
         </div>
 
@@ -96,13 +90,11 @@
                 <tr>
                     <td>
                         <p>
-                        While we saw the rise of weapons more powerful than Titans in the last war... 
-                        we will never see a weapon that can stop the advance of millions of Colossal Titans. 
-                        If the Walls walk even a single time... there will be nothing left we can do. 
-                        All that can remain for humanity would be to flee in terror at the rumble of 
-                        the footsteps that signal our end. These massive creatures would trample our 
-                        cities, our societies... They would crush the flora and fauna in every ecosystem. 
-                        They would literally flatten our world.
+                        If he begins the Rumbling, there will be nothing we can do.
+                        Humanity will be powerless but to cower in fear
+                        of the footfallsof the apocalypse.
+                        The civilization and cities of our world will be destroyed
+                        as everything we know and love is literally crushed flat.
                         </p>
                         <small>— Willy Tybur explains the destructive potential of the Rumbling to his audience during the Liberio festival</small>
                     </td>
@@ -110,10 +102,7 @@
             </table>
         </div>
 
-        <div class="container2bottom">
-            <img src="assets/scrolldown.png" alt="scrollimg">
-        </div>
-
+        <div class="fuzzy-overlay"></div>
     </div>
 
     <script src="js/index.js"> </script>
