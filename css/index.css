@@ -129,7 +129,7 @@ img[name="ereh"]:hover {
 .container1bottom {
     position: absolute;
     bottom: 0;
-    left: 45%;
+    left: 50%;
     transform: translateX(-100%);
 }
 
@@ -157,7 +157,7 @@ img[name="ereh"]:hover {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 70vh;
+    height: 65vh;
     padding-top: 300px;
     position: relative;
 }
@@ -186,28 +186,106 @@ img[name="ereh"]:hover {
     z-index: 2;
 }
 
+@keyframes fadeOut{
+    0% { opacity: 1; clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+    100% { opacity: 0; clip-path: polygon(0 0, 0 0, 0 100%, 0 100%); }
+}
+
+@keyframes fadeIn{
+    0% { opacity: 0; clip-path: polygon(0 0, 0 0, 0 100%, 0 100%); }
+    100% { opacity: 1; clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+}
+
+.upperimage.fadeOut{
+    animation: fadeOut 2s forwards;
+}
+
+.upperimage.fadeIn{
+    animation: fadeIn2s forwards;
+}
+
 .upperimage img{
     width: 80%;
     height: auto;
 }
 
-.speechtext{
+#playButton {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #A43F39;
+    border: none;
+}
+
+#playButton:hover{
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: red;
+    border: none;
+    cursor: pointer;
+}
+
+#playButton::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    border-top: 50px solid transparent; 
+    border-bottom: 50px solid transparent; 
+    border-left: 50px solid black;
+}
+
+.speechfull{
+    width: 900px;
+    margin-bottom: 200px;
+    z-index: 2;
+    text-align: center;
+    background-image: url('../assets/main-bg.png');
+    background-size:cover;
+    background-repeat: no-repeat;
+    display: none;
+}
+
+.speech-part {
+    display: none;
+    color: red;
+    font-family: 'Source Serif Pro';
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.speechshort{
     width: 700px;
     margin-bottom: 200px;
     background-image: url('../assets/main-bg.png');
     background-size:cover;
     background-repeat: no-repeat;
     z-index: 2;
+    display: none;
 }
 
-.speechtext p{
+.speechshort p{
     color: #928F8E;
     font-family: 'Source Serif Pro';
     text-align: justify;
     font-size: 20px;
 }
 
-.speechtext small{
+.speechshort small{
     color: #928F8E;
     font-family: 'Source Serif Pro';
     text-align: center;
@@ -215,13 +293,22 @@ img[name="ereh"]:hover {
 
 .container2bottom {
     position: absolute;
-    bottom: -15%;
-    left: 50%;
+    bottom: 2%;
+    left: 52%;
     transform: translateX(-100%);
+    z-index: 2;
+}
+
+.container2bottom p{
+    color: #928F8E;
+    font-family: 'Source Serif Pro';
+    font-weight: bold;
+    font-style: italic;
+    text-align: center;
+    font-size: 25px;
 }
 
 .container2bottom img{
-    width: 100%;
-    height: auto;
-    object-fit: cover;
+    width: 30%;
+    margin-left: 50px;
 }
