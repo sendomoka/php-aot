@@ -8,6 +8,7 @@ body {
     background-attachment: fixed;
     margin: 0;
     padding: 0;
+    z-index: 5;
 }
 
 img{
@@ -21,6 +22,7 @@ img{
     margin-top: 90px;
     position: relative;
     margin-left: 170px;
+    z-index: 2;
 }
 
 .container1left{
@@ -148,29 +150,57 @@ img[name="ereh"]:hover {
 }
 
 .container2{
-    background-image: url('../assets/aot-path.png');
-    background-size:contain;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../assets/speechfullsize.png');
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
-    height: auto;
+    height: 70vh;
     padding-top: 300px;
+    position: relative;
 }
 
-.speech{
-    width: auto;
-    margin-right: 60px;
+.fuzzy-overlay{
+    position: absolute;
+    background-image: url("../assets/noise.png");
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 25%;
+    z-index: 1;
+    animation: static 0.1s steps(10) infinite;
+}
+
+@keyframes static {
+    0% { background-position: 0 0; }
+    100% { background-position: 100% 100%; }
+}
+
+.upperimage {
+    position: absolute;
+    top: 15%;
+    left: 0;
+    z-index: 2;
+}
+
+.upperimage img{
+    width: 80%;
+    height: auto;
 }
 
 .speechtext{
     width: 700px;
-}
-
-.speech img{
-    width: 100%;
-    height: auto;
+    margin-bottom: 200px;
+    background-image: url('../assets/main-bg.png');
+    background-size:cover;
+    background-repeat: no-repeat;
+    z-index: 2;
 }
 
 .speechtext p{
-    margin-top: 130px;
     color: #928F8E;
     font-family: 'Source Serif Pro';
     text-align: justify;
@@ -185,7 +215,7 @@ img[name="ereh"]:hover {
 
 .container2bottom {
     position: absolute;
-    bottom: -200%;
+    bottom: -15%;
     left: 50%;
     transform: translateX(-100%);
 }
