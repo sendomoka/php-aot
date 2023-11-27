@@ -59,17 +59,17 @@
             </table>
             </div>
 
-            <div class="container1bottom">
-            <table>
-                <tr>
-                    <td><p>Story Begin<p></td>
-                </tr>
-                <tr>
-                    <td>
-                        <img src="assets/arrow-down.png" alt="arrow">
-                    </td>
-                </tr>
-            </table>   
+            <div class="nextpage2">
+                <table>
+                    <tr>
+                        <td><p>Story Begin<p></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img id="nextpage2" src="assets/arrow-down.png" alt="arrow">
+                        </td>
+                    </tr>
+                </table>   
             </div>
         </div>
 
@@ -79,13 +79,15 @@
             <table>
                 <tr>
                     <td>
-                        <img src="assets/willyspeech.png" alt="">
+                        <img src="assets/brush.png" alt="">
+                        <div class="sub-title">Willy Tybur Speech</div>
                     </td>
                 </tr>
             </table>
         </div>
 
         <button id="playButton"></button>
+        <audio id="willyspeech" src="assets/willyspeech.mp3" preload="auto"></audio>
 
         <div class="speechfull" id="speechfull">
             <table>
@@ -127,23 +129,127 @@
             </table>
         </div>
 
-        <!-- <div class="container2bottom">
+       
+
+        <div class="fuzzy-overlay"></div>
+        <div class="nextpage3">
             <table>
-                <tr>
-                    <td><p>Story Begin<p></td>
-                </tr>
-                <tr>
                     <td>
-                        <img src="assets/arrow-down.png" alt="arrow">
+                        <img id="nextpage3" src="assets/arrow-down.png" alt="arrow">
                     </td>
                 </tr>
             </table>   
-            </div> -->
-
-        <div class="fuzzy-overlay"></div>
+            </div>
     </div>
 
-    <audio id="sound" src="assets/willyspeech.mp3" preload="auto"></audio>
+    <div class="container3">
+
+        <div class="upperimage2" id="upperimage2">
+                <table>
+                    <tr>
+                        <td>
+                            <img src="assets/brush.png" alt="">
+                            <div class="sub-title">Prelude</div>
+                        </td>
+                    </tr>
+                </table>
+        </div>
+
+        <div class="content3">
+
+            <div class="content3-inner">
+
+                <div class="image-text" id="image-text-1">
+                    <img id="wallmaking" src="assets/wallmaking.png" alt="">
+                    <h2>King Karl Fritz Builds the Walls</h2>
+                    <p>King Karl Fritz builds 3 massive walls on Paradis Island using the power of the Founding Titan to protect the remnants of the Eldian Empire.</p>
+                </div>
+
+                <img id="arrowright-1" src="assets/arrow-right.png" alt="">
+
+                <div class="image-text" id="image-text-2">
+                    <img id="idiots" src="assets/6idiots.png" alt="">
+                    <h2>Marley's Infiltration Plan into Paradis Island</h2>
+                    <p>Due to the threat of the Rumbling, Marley plans to infiltrate the "Warrior Unit" into Paradis Island to steal the power of the Titans.</p>
+                </div>
+
+                <img id="arrowright-2" src="assets/arrow-right.png" alt="">
+
+                <div class="image-text" id="image-text-3">
+                    <img id="brainwash" src="assets/brainwash.png" alt="">
+                    <h2>Grisha Yeager Steals the Titan Powers</h2>
+                    <p>Grisha Yeager steals the Founding Titan power and slaughters the Reiss family after receiving future memories from Eren.</p>
+                </div>
+
+                <img id="arrowright-3" src="assets/arrow-right.png" alt="">
+
+                <div class="image-text" id="image-text-4">
+                    <img id="brothers" src="assets/brothers.png" alt="">
+                    <h2>Eren's Plan to Use the Colossal Titans</h2>
+                    <p>Eren plans to cooperate temporarily with Zeke in order to gain control over the Colossal Titans within the Walls and destroy all life outside of Paradis Island.</p>
+                </div>
+
+            </div>
+
+            <audio id="rock" src="assets/rocksound.mp3" preload="auto"></audio>
+            <audio id="camera" src="assets/camerasound.mp3" preload="auto"></audio>
+            <audio id="whisper" src="assets/brainwash.mp3" preload="auto"></audio>
+
+            <div class="nextpage4">
+                <table>
+                    <tr>
+                        <td><p>Conclusion<p></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img id="nextpage4" src="assets/arrow-down.png" alt="arrow">
+                        </td>
+                    </tr>
+                </table>   
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="container4">
+        <!-- <img src="assets/localman.png" alt=""> -->
+        <div class="eldian">
+            <table>
+                <tr>
+                    <td>
+                        <img src="assets/eldialogo.png" alt="">
+                    </td>
+                </tr>
+                <tr>
+                    <td><h2>Eldia</h2></td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Eldia is a nation that is currently located on Paradis Island which is chiefly populated by the Subjects of Ymir, a race that used to be able turn into Titans if injected with a serum.</p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="marley">
+        <table>
+                <tr>
+                    <td>
+                        <img src="assets/marleylogo.png" alt="">
+                    </td>
+                </tr>
+                <tr>
+                    <td><h2>Marley</h2></td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Marley is a nation located beyond the Walls and across the ocean from Paradis Island. Marley was once conquered by Eldia in ancient times, but during the Great Titan War, the Marleyans rose up and subjugated all of Eldia's territory with the exception of Paradis Island.</p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
     <script src="js/index.js"> </script>
 </body>
 </html>
