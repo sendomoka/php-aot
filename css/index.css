@@ -460,7 +460,7 @@ img[name="ereh"]:hover {
 }
 
 .container4{
-    display: none;
+    display: flex;
     justify-content: space-between;
     align-items: center;
     height: 52vh;
@@ -469,15 +469,15 @@ img[name="ereh"]:hover {
     position: relative;
 }
 
-.container4 img{
+#ruin{
     margin-bottom: 75px;
     margin-left: 500px;
 }
 
-.container4 img:hover{
+#ruin:hover{
+    cursor: pointer;
     margin-bottom: 75px;
     margin-left: 500px;
-    cursor: pointer;
 }
 
 .marley{
@@ -490,11 +490,13 @@ img[name="ereh"]:hover {
     background-size: cover;
 }
 
-.marley, .eldian:hover{
+.marley:hover, .eldian:hover{
     cursor: pointer;
 }
 
 .marley, .eldian{
+    position: relative;
+    top: -80px;
     display: none;
     align-items: center;
     flex: 1;
@@ -504,7 +506,6 @@ img[name="ereh"]:hover {
     padding: 20px;
     box-sizing: border-box;
     border: white 2px solid;
-    opacity: 0;
 }
 
 .marley img{
@@ -519,6 +520,10 @@ img[name="ereh"]:hover {
     height: auto;
     margin-bottom: 20px;
     margin-left: 250px;
+}
+
+.marley img:hover, .eldia img:hover{
+    cursor: pointer;
 }
 
 .marley h2, .eldian h2{
@@ -558,9 +563,40 @@ img[name="ereh"]:hover {
 .fade-out {
     transition: opacity 1s;
     opacity: 0;
-  }
+}
   
   .fade-in {
     transition: opacity 1s;
     opacity: 1;
-  }
+}
+
+@keyframes uparrow {
+    0% { -webkit-transform: translateY(0); opacity: 0.4 }
+    100% { -webkit-transform: translateY(-0.4em); opacity: 0.9 }
+}
+
+.arrow {
+    display: none;
+    position: absolute;
+    bottom: -17%;
+    left: 48%;
+    transform: translateX(-50%);
+    border-color:transparent;
+    border-style:solid;
+    border-width:0 2em;
+    height:0;
+    margin:10em auto;
+    opacity:0.4;
+    text-indent:-9999px;
+    transform-origin: 50% 50%;
+    width:0;
+}
+
+.show {
+    display: block;
+}
+
+.up{
+    animation: uparrow 0.6s infinite alternate ease-in-out;
+    border-bottom:2em solid #12ED00;
+}

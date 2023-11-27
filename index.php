@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index</title>
+    <title>Home</title>
     <link href='https://fonts.googleapis.com/css?family=Source Serif Pro' rel='stylesheet'>
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
     <?php include 'components/header.php'; ?>
     
-        <div class="container1">
+    <div class="container1">
             <div class="container1left">
             <table>
 
@@ -38,7 +38,7 @@
                                 <audio id="hover-sound" src="assets/erenroar.mp3" preload="auto" muted></audio>
 
                         <div class="hover-text" id="text">
-                            <a href="register.php" class="button">
+                            <a href="timeline.php" class="button">
                                 START THE END
                             </a>
                         </div>
@@ -71,7 +71,7 @@
                     </tr>
                 </table>   
             </div>
-        </div>
+    </div>
 
     <div class="container2">  
 
@@ -212,7 +212,7 @@
     </div>
 
     <div class="container4">
-        <img src="assets/localman.png" alt="">
+        <img id="ruin" src="assets/localman.png" alt="">
         <div class="eldian">
             <table>
                 <tr>
@@ -248,6 +248,9 @@
                 </tr>
             </table>
         </div>
+
+        <a href="#" class="arrow up">Up</a>
+
     </div>
 
     <script src="js/index.js"> </script>

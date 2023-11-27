@@ -63,16 +63,16 @@ document.getElementById('nextpage3').addEventListener('click', function() {
     setTimeout(function() {
         document.getElementById('image-text-1').style.display = 'flex';
         document.getElementById('image-text-1').style.animationPlayState = 'running';
-    }, 4000);
+    }, 2000);
 
     setTimeout(function() {
         document.getElementById('rock').play();
-    }, 4000);
+    }, 2000);
 
     setTimeout(function() {
         document.getElementById('arrowright-1').style.display = 'block';
         document.getElementById('arrowright-1').style.animationPlayState = 'running';
-    }, 5500);
+    }, 3500);
 });
 
 document.getElementById('arrowright-1').addEventListener('click', function(){
@@ -166,4 +166,13 @@ img.addEventListener('click', function() {
       element.classList.add('fade-in');
     });
   });
+});
+
+document.querySelector('#ruin').addEventListener('click', function() {
+    document.querySelector('.arrow').classList.toggle('show');
+});
+
+document.querySelector('.arrow').addEventListener('click', function(event) {
+    event.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 });

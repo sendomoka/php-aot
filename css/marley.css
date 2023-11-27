@@ -3,6 +3,10 @@ body, html {
     padding: 0;
     height: 100%;
     width: 100%;
+    background-image: url('../assets/main-bg.png');
+    background-size: cover;
+    background-repeat: repeat;
+    background-attachment: fixed;
 }
 
 .marleydesc{
@@ -12,6 +16,13 @@ body, html {
     align-items: center;
     height: 100%;
     width: 100%;
+}
+
+.marleydesc img{
+    position: absolute;
+    top: 0%;
+    right: 32%;
+    width: 10%;
 }
 
 .marleydesc::before {
@@ -26,7 +37,7 @@ body, html {
     background-position: center;
     background-repeat: no-repeat;
     filter: blur(2px);
-    z-index: -1;
+    z-index: 1;
     justify-content: center;
     align-items: center;
 }
@@ -39,21 +50,11 @@ body, html {
     align-items: center;
     overflow: hidden;
     width: fit-content;
-}
-
-.text::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
     background-image: url('../assets/main-bg.png');
-    background-size: contain;
+    background-size: 63% 94%;
     background-position: center;
     background-repeat: no-repeat;
-    opacity: 0.7;
-    z-index: -1;
+    z-index: 2;
 }
 
 .text h1{
@@ -63,7 +64,8 @@ body, html {
     text-align: center;
     width: 70%;
     margin-bottom: 10px;
-    margin-top: 7px;
+    margin-top: 30px;
+    margin-right: 100px;
 }
 
 .text p{
@@ -72,13 +74,12 @@ body, html {
     font-size: 20px;
     font-weight: bold;
     text-align: center;
-    width: 70%;
-    margin-bottom: 20px;
+    width: 60%;
+    margin-top: 10px;
 }
 
 .marleychar{
     display: flex;
-    background-image: url('../assets/aot-path.png');
     justify-content: center;
     align-items: center;
     background-size: cover;
@@ -86,6 +87,7 @@ body, html {
     background-repeat: no-repeat;
     height: 100%;
     width: 100%;
+    position: relative;
 }
 
 .marleydesc, .marleychar{
@@ -94,4 +96,29 @@ body, html {
     align-items: center;
     margin: 0;
     padding: 0;
+}
+
+.upperimage{
+    position: absolute;
+    top: 15%;
+    left: 0;
+    z-index: 2;
+}
+
+.upperimage img img{
+    width: 80%;
+    height: auto;
+}
+
+.sub-title{
+    position: absolute;
+    top: 47%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-family: 'Source Serif Pro';
+    font-weight: bold;
+    font-style: italic;
+    text-align: center;
+    font-size: 25px;
 }

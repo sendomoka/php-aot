@@ -3,6 +3,10 @@ body, html {
     padding: 0;
     height: 100%;
     width: 100%;
+    background-image: url('../assets/main-bg.png');
+    background-size: cover;
+    background-repeat: repeat;
+    background-attachment: fixed;
 }
 
 .eldiandesc{
@@ -26,7 +30,7 @@ body, html {
     background-position: center;
     background-repeat: no-repeat;
     filter: blur(2px);
-    z-index: -1;
+    z-index: 1;
     justify-content: center;
     align-items: center;
 }
@@ -39,21 +43,29 @@ body, html {
     align-items: center;
     overflow: hidden;
     width: fit-content;
+    z-index: 2;
 }
 
 .text::before {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 10%;
+    left: 18%;
     height: 100%;
-    width: 100%;
+    width: 65%;
     background-image: url('../assets/main-bg.png');
-    background-size: contain;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    opacity: 0.7;
+    opacity: 1;
     z-index: -1;
+}
+
+.eldiandesc img{
+    position: absolute;
+    top: 9%;
+    right: 33%;
+    width: 10%;
 }
 
 .text h1{
@@ -62,8 +74,11 @@ body, html {
     font-size: 80px;
     text-align: center;
     width: 70%;
+    position: relative;
+    top: 18px;
     margin-bottom: 10px;
-    margin-top: 7px;
+    padding-top: 20px;
+    margin-right: 130px;
 }
 
 .text p{
@@ -72,13 +87,13 @@ body, html {
     font-size: 20px;
     font-weight: bold;
     text-align: center;
-    width: 70%;
+    width: 60%;
     margin-bottom: 20px;
 }
 
 .eldianchar{
     display: flex;
-    background-image: url('../assets/aot-path.png');
+    background-image: url('../assets/path.png');
     justify-content: center;
     align-items: center;
     background-size: cover;
@@ -86,6 +101,7 @@ body, html {
     background-repeat: no-repeat;
     height: 100%;
     width: 100%;
+    position: relative;
 }
 
 .eldiandesc, .eldianchar{
@@ -94,4 +110,29 @@ body, html {
     align-items: center;
     margin: 0;
     padding: 0;
+}
+
+.upperimage{
+    position: absolute;
+    top: 15%;
+    left: 0;
+    z-index: 2;
+}
+
+.upperimage img img{
+    width: 80%;
+    height: auto;
+}
+
+.sub-title{
+    position: absolute;
+    top: 47%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-family: 'Source Serif Pro';
+    font-weight: bold;
+    font-style: italic;
+    text-align: center;
+    font-size: 25px;
 }
