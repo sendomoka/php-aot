@@ -212,7 +212,7 @@
     </div>
 
     <div class="container4">
-        <!-- <img src="assets/localman.png" alt=""> -->
+        <img src="assets/localman.png" alt="">
         <div class="eldian">
             <table>
                 <tr>

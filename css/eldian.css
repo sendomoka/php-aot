@@ -5,7 +5,7 @@ body, html {
     width: 100%;
 }
 
-.marleydesc{
+.eldiandesc{
     position: relative;
     display: flex;
     justify-content: center;
@@ -14,14 +14,14 @@ body, html {
     width: 100%;
 }
 
-.marleydesc::before {
+.eldiandesc::before {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
     width: 100%;
-    background-image: url('../assets/marleybg.png');
+    background-image: url('../assets/eldianbg.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -57,7 +57,7 @@ body, html {
 }
 
 .text h1{
-    color: #851D1E;
+    color: #4A316D;
     font-family: 'Source Serif Pro';
     font-size: 80px;
     text-align: center;
@@ -76,7 +76,7 @@ body, html {
     margin-bottom: 20px;
 }
 
-.marleychar{
+.eldianchar{
     display: flex;
     background-image: url('../assets/aot-path.png');
     justify-content: center;
@@ -88,7 +88,7 @@ body, html {
     width: 100%;
 }
 
-.marleydesc, .marleychar{
+.eldiandesc, .eldianchar{
     display: flex;
     justify-content: center;
     align-items: center;
