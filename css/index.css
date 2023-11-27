@@ -157,7 +157,7 @@ img[name="ereh"]:hover {
 }
 
 .container2{
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     background-image: url('../assets/speechfullsize.png');
@@ -352,7 +352,7 @@ img[name="ereh"]:hover {
 }
 
 .container3{
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     height: 65vh;
@@ -460,7 +460,7 @@ img[name="ereh"]:hover {
 }
 
 .container4{
-    display: flex;
+    display: none;
     justify-content: space-between;
     align-items: center;
     height: 52vh;
@@ -471,6 +471,13 @@ img[name="ereh"]:hover {
 
 .container4 img{
     margin-bottom: 75px;
+    margin-left: 500px;
+}
+
+.container4 img:hover{
+    margin-bottom: 75px;
+    margin-left: 500px;
+    cursor: pointer;
 }
 
 .marley{
@@ -488,7 +495,7 @@ img[name="ereh"]:hover {
 }
 
 .marley, .eldian{
-    display: flex;
+    display: none;
     align-items: center;
     flex: 1;
     width: 200px;
@@ -497,12 +504,21 @@ img[name="ereh"]:hover {
     padding: 20px;
     box-sizing: border-box;
     border: white 2px solid;
+    opacity: 0;
 }
 
-.marley, .eldian img{
+.marley img{
     width: 25%;
     height: auto;
-    margin-bottom: 20px; 
+    margin-bottom: 20px;
+    margin-left: 250px; 
+}
+
+.eldian img{
+    width: 25%;
+    height: auto;
+    margin-bottom: 20px;
+    margin-left: 250px;
 }
 
 .marley h2, .eldian h2{
@@ -511,12 +527,40 @@ img[name="ereh"]:hover {
     font-weight: bold;
     font-size: 30px;
     text-align: center;
-    margin-bottom: -10px;
+    margin-bottom: -25px;
+    font-weight: bold;
+}
+
+.eldian h2{
+    background-color: #851D1E;
+}
+
+.marley h2{
+    background-color: #4A316D
 }
 
 .marley p, .eldian p{
-    color: #928F8E;
+    color: black;
     font-family: 'Source Serif Pro';
     text-align: center;
     font-size: 20px;
+    font-weight: bold;
 }
+
+.eldian p{
+    background-color: #851D1E;
+}
+
+.marley p{
+    background-color: #4A316D
+}
+
+.fade-out {
+    transition: opacity 1s;
+    opacity: 0;
+  }
+  
+  .fade-in {
+    transition: opacity 1s;
+    opacity: 1;
+  }

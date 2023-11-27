@@ -122,3 +122,48 @@ document.getElementById('nextpage4').addEventListener('click', function() {
     container2.style.display = 'flex';
     container2.scrollIntoView({behavior: "smooth"});
 });
+
+
+const elements = document.querySelectorAll('.eldian, .marley');
+elements.forEach(element => {
+  element.addEventListener('mouseover', function() {
+
+    const bgImage = window.getComputedStyle(this, null).getPropertyValue('background-image');
+    
+    document.querySelector('.container4').style.backgroundImage = bgImage;
+    container4.style.backgroundSize = 'contain';
+  });
+
+  element.addEventListener('mouseout', function() {
+    document.querySelector('.container4').style.backgroundImage = '';
+    document.querySelector('.container4').style.filter = '';
+    container4.style.backgroundSize = 'auto';
+  });
+});
+
+elements.forEach(element => {
+    element.addEventListener('click', function() {
+      if (this.classList.contains('marley')) {
+        window.location.href = 'marley.php';
+      } else if (this.classList.contains('eldian')) {
+        window.location.href = 'eldian.php';
+      }
+    });
+  });
+
+const img = document.querySelector('.container4 img');
+img.addEventListener('click', function() {
+  this.classList.add('fade-out');
+
+  this.addEventListener('transitionend', function() {
+    this.style.display = 'none';
+    this.classList.remove('fade-out');
+
+    const elements = document.querySelectorAll('.marley, .eldian');
+
+    elements.forEach(element => {
+        element.style.display = 'flex';
+      element.classList.add('fade-in');
+    });
+  });
+});
