@@ -13,7 +13,6 @@
     left: 0;
     right: 0;
     padding: 0 3rem;
-
 }
 
 .left-side{
@@ -44,27 +43,32 @@
 .user-info .username {
     font-weight: bold;
     color: white;
+    margin-top: 10px;
+    margin-bottom: 15px;
 }
 
 .user-info .role {
     font-size: 0.8em;
     color: gray;
+    margin-bottom: 10px;
 }
 
 </style>
 
-<header class="header">
-    <div class="left-side">
-    <a href="index.php">
-            <img src="assets/aot-logo.png" alt="Logo">
-        </a>
-    </div>
+    <header class="header">
+        <div class="left-side">
+            <a href="index.php">
+                <img src="assets/aot-logo.png" alt="Logo">
+            </a>
+         </div>
     
-    <div class="right-side">
-    <img src="assets/Vector.png" alt="User Image">
-    <div class="user-info">
-        <p class="username">Jehian Athaya</p>
-        <p class="role">Marley</p>
-    </div>
-</div>
-</header>
+        <div class="right-side">
+            <a href="dashboard.php">
+                <img src="assets/Vector.png" alt="User Image">
+            </a>
+            <div class="user-info">
+                <p class="username">Jehian Athaya</p>
+                <p class="role">Eldian</p>
+            </div>
+        </div>
+    </header>
