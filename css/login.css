@@ -72,10 +72,21 @@ input[type="submit"]{
     background-color: #A43F39;
 }
 
-/* input[type="submit"]:hover{
+input[type="submit"]:hover{
+    cursor: pointer;
+    align-items: center;
+    width: 80%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    background-color: #A43F39;
+}
+
+input[type="submit"]:hover{
+    cursor: pointer;
     transform: scale(1.04);
     background-color: #21e065;
-} */
+}
 
 a{
     text-decoration: none;

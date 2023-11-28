@@ -1,0 +1,209 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-image: url('../assets/dashboardbg.png');
+    background-size: cover;
+    background-repeat: repeat;
+    background-attachment: fixed;
+}
+
+.kiri{
+    position: absolute;
+    left: 0;
+    width: 17%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: 1px solid #928F8E;
+}
+
+.kiri img{
+    position: relative;
+    top: -2%;
+    height: 100px;
+    width: 100%;
+}
+
+.kiri button {
+    width: 260px;
+    height: 50px;
+    background-color: transparent;
+    color: white;
+    font-family: 'Source Serif Pro';
+    font-size: 20px;
+    border: none;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+.kiri button.active {
+    width: 260px;
+    height: 50px;
+    background-color: transparent;
+    color: white;
+    font-family: 'Source Serif Pro';
+    font-size: 20px;
+    border: none;
+    margin: 10px 0;
+    cursor: pointer;
+    background-color: #928F8E;
+}
+
+.kiri button:hover {
+    background-color: #928F8E;
+}
+
+.atas{
+    position: absolute;
+    margin-left: 17%;
+    top: 0;
+    width: 83%;
+    height: 10%;
+    border: 1px solid #928F8E;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+}
+
+.atas h1{
+    position: relative;
+    top: 25%;
+    left: 3%;
+    font-family: 'Source Serif Pro';
+    font-size: 30px;
+    color: white;
+}
+
+.atas img{
+    position: relative;
+    width: 50px;
+    top: -35%;
+    left: 85%;
+}
+
+.atas .username {
+    position: relative;
+    font-weight: bold;
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    top: -115%;
+    left: 90%;
+}
+
+.atas .role {
+    position: relative;
+    font-size: 0.9em;
+    color: gray;
+    margin-bottom: 10px;
+    top: -125%;
+    left: 90%;
+}
+
+.content1{
+    position: absolute;
+    margin-left: 17%;
+    top: 10%;
+    width: 83%;
+    height: 90%;
+}
+
+.form-group{
+    font-weight: bold;
+    color: #928F8E;
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    margin-left: 25px;
+}
+
+.input-group-avatar img{
+    width: 10%;
+}
+
+.input-group-avatar, .input-group-2, .input-group-nick, .input-group-name, .input-group-pw{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.input-group-avatar p{
+    margin-right: 140px;
+}
+
+.input-group-nick p{
+    margin-right: 50px;
+}
+
+.input-group-name p{
+    margin-right: 79px;
+}
+
+.input-group-pw p{
+    margin-right: 53px;
+}
+
+
+input[type="file"] {
+    display: block;
+    position: relative;
+    margin-left: 258px;
+}
+
+input[type="text"], input[type="password"] {
+    align-items: center;
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    background-color: #373737;
+    color: white;
+    font-size: 15px;
+}
+
+input[type="submit"]{
+    align-items: center;
+    width: 20%;
+    padding: 12px 20px;
+    margin: 8px 175px;
+    box-sizing: border-box;
+    background-color: #A43F39;
+}
+
+.content2{
+    display: none;
+    position: absolute;
+    margin-left: 17%;
+    top: 10%;
+    width: 83%;
+    height: 90%;
+}
+
+.content3{
+    display: none;
+    position: absolute;
+    margin-left: 17%;
+    top: 10%;
+    width: 83%;
+    height: 90%;
+}
+
+.content4{
+    display: none;
+    position: absolute;
+    margin-left: 17%;
+    top: 10%;
+    width: 83%;
+    height: 90%;
+}

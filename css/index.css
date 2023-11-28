@@ -460,7 +460,7 @@ img[name="ereh"]:hover {
 }
 
 .container4{
-    display: flex;
+    display: none;
     justify-content: space-between;
     align-items: center;
     height: 52vh;
