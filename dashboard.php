@@ -167,39 +167,155 @@
     </div>
 
     <div class="content3" id="content-3">
+        <button id="leftbutton3"> <img src="assets/addicon.png" alt="icon"> Add Data</button>
+
+        <div class="timeline-select3" style="width:200px;">
+            <select name="" id="">
+                <option value="0">Timeline</option>
+                <option value="1">Mitras, Paradis</option>
+                <option value="2">Karifa, Marley</option>
+                <option value="3">Liberio, Marley</option>
+                <option value="4">Salmud, Marley</option>
+                <option value="5">Odiha, Marley</option>
+                <option value="6">Marley Ravine</option>
+                <option value="7">Fort Salta, Marley</option>
+            </select>
+        </div>
+        <input type="search" id="searchBar3" placeholder="Search...">
+
+        <table id="contentTable">
+
+            <tr>
+                <th>No</th>
+                <th>Name</th>
+                <th>Timeline</th>
+                <th>Cause</th>
+                <th>Action</th>
+            </tr>
+
+            <tr>
+                <td>1.</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>
+                    <img src="assets/detailicon.png" name="detaildeath" alt="icon" class="action-img">
+                    <img src="assets/editicon.png"  name="editdeath" alt="icon" class="action-img">
+                    <img src="assets/deleteicon.png" name="deletedeath" alt="icon" class="action-img">
+                </td>
+            </tr>
+
+        </table>
+    </div>
+
+    <div class="content3-1" id="content-3-1">
         <form method="post">
-                <div class="form-group">
+            <div class="form-group3">
 
-                    <div class="input-group-avatar">
-                        <p>Change Avatar</p>
-                        <img src="assets/Vector.png" alt="">
+                <div class="input-group-name">
+                    <p>Name</p>
+                    <div class="name-select" style="width:360px;">
+                        <select name="" id="">
+                            <option value="0">Rest In Peace</option>
+                            <option value="1">Eren Yeager</option>
+                            <option value="2">Mikasa Ackerman</option>
+                            <option value="3">Armin Arlert</option>
+                            <option value="4">Levi Ackerman</option>
+                            <option value="5">Zeke Yeager</option>
+                            <option value="6">Sasha Braun</option>
+                            <option value="7">Hange Zoe</option>
+                            <option value="8">Erwin Smith</option>
+                        </select>
                     </div>
-
-                    <div class="input-group-2">
-                        <label for="avatarUpload" class="file-upload-button">Choose Image</label>
-                        <input type="file" id="avatarUpload" class="avatar-upload" accept=".png, .jpg, .jpeg" style="display: none;">
-                    </div>
-
-                    <div class="input-group-name">
-                        <p>Name</p>
-                        <input type="text" name="name" value="Jehian Athaya">
-                    </div>                
-
-                    <div class="input-group-nick">
-                        <p>Nickname</p>
-                        <input type="text" name="nickname" value="jehath">
-                    </div>
-                    
-                    
-
-                    <div class="input-group-pw">
-                        <p>Password</p>
-                        <input type="password" name="password" value="12345">
-                    </div>
-
-                    <input type="submit" value="Edit Data">
                 </div>
-            </form>
+                
+                <div class="input-group-timeline">
+                    <p>Timeline</p>
+                    <div class="timeline-select3-1" style="width:360px;">
+                        <select name="" id="">
+                            <option value="0">Select Timeline</option>
+                            <option value="1">Mitras, Paradis</option>
+                            <option value="2">Karifa, Marley</option>
+                            <option value="3">Liberio, Marley</option>
+                            <option value="4">Salmud, Marley</option>
+                            <option value="5">Odiha, Marley</option>
+                            <option value="6">Marley Ravine</option>
+                            <option value="7">Fort Salta, Marley</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="input-group-image">
+                    <p>Image</p>
+                    <label for="deathUpload" class="death-upload-button">Choose Image</label>
+                    <input type="file" id="deathUpload" class="death-upload" name="deathimg" accept=".png, .jpg, .jpeg" style="display: none;">
+                </div>
+
+                <div class="input-group-cause">
+                    <p>Cause</p>
+                    <input type="text" name="cause">
+                </div>
+
+                <input type="submit" value="Add Data">
+            </div>
+        </form>
+    </div>
+
+    <div class="content3-2" id="content-3-2">
+        <form method="post">
+            <div class="form-group3-2">
+
+                <div class="input-group-name">
+                    <p>Name</p>
+                    <div class="name-select" style="width:360px;">
+                        <select name="" id="">
+                            <option value="0">Rest In Peace</option>
+                            <option value="1">Eren Yeager</option>
+                            <option value="2">Mikasa Ackerman</option>
+                            <option value="3">Armin Arlert</option>
+                            <option value="4">Levi Ackerman</option>
+                            <option value="5">Zeke Yeager</option>
+                            <option value="6">Sasha Braun</option>
+                            <option value="7">Hange Zoe</option>
+                            <option value="8">Erwin Smith</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="input-group-timeline">
+                    <p>Timeline</p>
+                    <div class="timeline-select3-1" style="width:360px;">
+                        <select name="" id="">
+                            <option value="0">Select Timeline</option>
+                            <option value="1">Mitras, Paradis</option>
+                            <option value="2">Karifa, Marley</option>
+                            <option value="3">Liberio, Marley</option>
+                            <option value="4">Salmud, Marley</option>
+                            <option value="5">Odiha, Marley</option>
+                            <option value="6">Marley Ravine</option>
+                            <option value="7">Fort Salta, Marley</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="input-group-image">
+                    <p>Image</p>
+                    <label for="deathUpload" class="death-upload-button">Choose Image</label>
+                    <input type="file" id="deathUpload" class="death-upload" name="deathimg" accept=".png, .jpg, .jpeg" style="display: none;">
+                </div>
+
+                <div class="input-group-cause">
+                    <p>Cause</p>
+                    <input type="text" name="cause">
+                </div>
+
+                <input type="submit" value="Edit Data">
+            </div>
+        </form>
+    </div>
+
+    <div class="content3-3" id="content-3-3">
+
     </div>
 
     <div class="content4" id="content-4">

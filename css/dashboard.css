@@ -186,7 +186,7 @@ html, body{
 }
 
 .input-group-avatar, .input-group-2, .input-group-nick, .input-group-name, .input-group-pw, .input-group-place, .input-group-detail, .input-group-time, .input-group-image, 
-.input-group-fraeth, .input-group-status{
+.input-group-fraeth, .input-group-status, .input-group-cause, .input-group-timeline{
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -208,6 +208,14 @@ html, body{
 
 .input-group-pw p{
     margin-right: 53px;
+}
+
+.input-group-timeline p{
+    margin-right: 50px;
+}
+
+.input-group-cause p{
+    margin-right: 50px;
 }
 
 .input-group-fraeth p{
@@ -256,7 +264,7 @@ input[type="text"], input[type="password"] {
     font-size: 16px;
 }
 
-.content1 input[type="submit"], .content4-1 input[type="submit"], .content4-2 input[type="submit"]{
+.content1 input[type="submit"], .content3-1 input[type="submit"], .content3-2 input[type="submit"], .content4-1 input[type="submit"], .content4-2 input[type="submit"]{
     align-items: center;
     width: 40%;
     padding: 12px 20px;
@@ -269,6 +277,10 @@ input[type="text"], input[type="password"] {
     font-size: 16px;
     font-weight: bold;
     border-radius: 5px;
+}
+
+.content3-1 input[type="submit"], .content3-2 input[type="submit"]{
+    width: 38%;
 }
 
 .content1 input[type="submit"]:hover{
@@ -461,7 +473,7 @@ input[type="text"], input[type="password"] {
     margin-right: 50px;
 }
 
-.timeline-upload-button {
+.timeline-upload-button, .death-upload-button {
     display: inline-block;
     padding: 10px 20px;
     background-color: #403E3E;
@@ -477,7 +489,12 @@ input[type="text"], input[type="password"] {
     right: 31.5%;
 }
 
-.timeline-upload-button:hover {
+.death-upload-button{
+    right: 31.3%;
+    width: 29.8%;
+}
+
+.timeline-upload-button:hover, .death-upload-button:hover {
     background-color: #807C7C;
 }
 
@@ -561,13 +578,148 @@ textarea {
     color: #A43F39;
 }
 
-.content3{
+.content3, .content3-1, .content3-2{
     display: none;
     position: absolute;
     margin-left: 17%;
     top: 10%;
     width: 83%;
     height: 90%;
+}
+
+.content3-1, .content3-2{
+    margin-left: 42%;
+}
+
+.form-group3, .form-group3-2{
+    font-weight: bold;
+    color: #928F8E;
+    font-family: 'Source Serif Pro';
+    display: flex;
+    flex-direction: column;
+    margin-top: 120px;
+    margin-left: 25px;
+    gap: 10px;
+}
+
+#leftbutton3 {
+    background-color: #468662;
+    font-family: 'Source Serif Pro';
+    font-size: 16px;
+    color: white;
+    position: absolute;
+    left: 3%;
+    top: 4%;
+    width: 170px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+#leftbutton3:hover {
+    background-color: #00CC08;
+}
+
+#leftbutton3 img{
+    width: 25px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.timeline-select3 {
+    position: relative;
+    left: 61%;
+    top: 4.5%;
+    font-family: 'Source Serif Pro';
+    font-size: 16px;
+}
+  
+.timeline-select3 select {
+    display: none;
+}
+
+#searchBar3 {
+    position: absolute;
+    top: 4%;
+    right: 2%;
+    width: 250px;
+    height: 40px;
+    background-image: url('../assets/searchicon.png');
+    background-size: 25px 25px;
+    background-color: #484848;
+    font-family: 'Source Serif Pro';
+    font-size: 15px;
+    color: white;
+    padding-left: 50px;
+    background-repeat: no-repeat;
+    background-position: 10px center;
+}
+
+.content3 table {
+    margin-left: 35px;
+    margin-top: 6%;
+    width: 95%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.content3 th {
+    border: 1px solid #ddd;
+    background-color: gray;
+    color: white;
+    padding: 10px;
+}
+
+.content3 th:first-child {
+    width: 50px;
+}
+
+.content3 th:nth-child(2) {
+    width: 150px;
+}
+
+.content3 th:nth-child(3) {
+    width: 300px;
+}
+
+.content3 th:nth-child(4) {
+    width: 300px;
+}
+
+.content3 th:nth-child(5) {
+    width: 200px;
+}
+
+.content3 td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    color: white;
+}
+
+.name-select {
+    position: relative;
+    left: -2%;
+    top: 4.5%;
+    font-family: 'Source Serif Pro';
+    font-size: 16px;
+}
+  
+.name-select select {
+    display: none;
+}
+
+.timeline-select3-1 {
+    position: relative;
+    left: -1.5%;
+    top: 4.5%;
+    font-family: 'Source Serif Pro';
+    font-size: 16px;
+}
+  
+.timeline-select3-1 select {
+    display: none;
 }
 
 .content4, .content4-1, .content4-2{
@@ -699,12 +851,12 @@ textarea {
     background-color: #A43F39;
 }
 
-.content4-1 input[type="submit"]:hover{
+.content4-1 input[type="submit"]:hover, .content3-1 input[type="submit"]:hover{
     color: black;
     background-color: #00E324;
 }
 
-.content4-2 input[type="submit"]:hover{
+.content4-2 input[type="submit"]:hover, .content3-2 input[type="submit"]:hover{
     color: black;
     background-color: yellow;
 }
