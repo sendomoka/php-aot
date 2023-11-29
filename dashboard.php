@@ -63,7 +63,7 @@
     </div>
 
     <div class="content2" id="content-2">
-        <button id="leftbutton"> <img src="assets/addicon.png" alt="icon"> Add Data</button>
+        <button id="leftbutton2"> <img src="assets/addicon.png" alt="icon"> Add Data</button>
         <div class="time-select" style="width:100px;">
             <select name="" id="">
                 <option value="0">Time</option>
@@ -89,9 +89,9 @@
                 <td>Mitras, Paradise</td>
                 <td>Day 1</td>
                 <td>
-                    <img src="assets/detailicon.png" name="detail" alt="icon" class="action-img">
-                    <img src="assets/editicon.png"  name="edit" alt="icon" class="action-img">
-                    <img src="assets/deleteicon.png" name="delete" alt="icon" class="action-img">
+                    <img src="assets/detailicon.png" name="detailtimeline" alt="icon" class="action-img">
+                    <img src="assets/editicon.png"  name="edittimeline" alt="icon" class="action-img">
+                    <img src="assets/deleteicon.png" name="deletetimeline" alt="icon" class="action-img">
                 </td>
             </tr>
 
@@ -203,7 +203,118 @@
     </div>
 
     <div class="content4" id="content-4">
-    <form method="post">
+        <button id="leftbutton4"> <img src="assets/addicon.png" alt="icon"> Add Data</button>
+
+        <div class="fraeth-select-4" style="width:200px;">
+                <select name="" id="">
+                <option value="0">Fraction - Ethnic</option>
+                <option value="1">Yeagerist - Eldian</option>
+                <option value="2">Alliance - Eldian</option>
+                <option value="3">Alliance - Marley</option>
+                <option value="4">Warrior - Marley</option>
+                <option value="5">Anti Marleyan - Marley</option>
+                <option value="6">Military - Eldian</option>
+                <option value="7">Military - Marley</option>
+                <option value="8">Civil - Eldian</option>
+                <option value="9">Civil - Marley</option>
+            </select>
+        </div>
+
+        <div class="status-select-4" style="width:100px;">
+            <select name="" id="">
+                <option value="0">Status</option>
+                <option value="1">Alive</option>
+                <option value="2">Dead</option>
+            </select>
+        </div>
+        <input type="search" id="searchBar4" placeholder="Search...">
+
+        <table id="contentTable">
+
+            <tr>
+                <th>No</th>
+                <th>Avatar</th>
+                <th>Name</th>
+                <th>Fraction - Ethnic</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+
+            <tr>
+                <td>1.</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>
+                    <img src="assets/editicon.png"  name="edituser" alt="icon" class="action-img">
+                    <img src="assets/deleteicon.png" name="deleteuser" alt="icon" class="action-img">
+                </td>
+            </tr>
+
+        </table>
+    </div>
+
+    <div class="content4-1" id="content-4-1">
+        <form method="post">
+            <div class="form-group">
+
+                <div class="input-group-avatar">
+                    <p>Select Avatar</p>
+                    <img src="assets/Vector.png" alt="">
+                </div>
+
+                <div class="input-group-2">
+                    <label for="avatarUpload" class="file-upload-button">Choose Image</label>
+                    <input type="file" id="avatarUpload" class="avatar-upload" accept=".png, .jpg, .jpeg" style="display: none;">
+                </div>
+
+                <div class="input-group-name">
+                    <p>Name</p>
+                    <input type="text" name="name">
+                </div>
+
+                <div class="input-group-nick">
+                    <p>Nickname</p>
+                    <input type="text" name="nickname">
+                </div>
+                
+                <div class="input-group-fraeth">
+                    <p>Fraction - Ethnic</p>
+                    <div class="fraeth-select-4-1" style="width:363px;">
+                        <select name="" id="">
+                            <option value="0">Choose One</option>
+                            <option value="1">Yeagerist - Eldian</option>
+                            <option value="2">Alliance - Eldian</option>
+                            <option value="3">Alliance - Marley</option>
+                            <option value="4">Warrior - Marley</option>
+                            <option value="5">Anti Marleyan - Marley</option>
+                            <option value="6">Military - Eldian</option>
+                            <option value="7">Military - Marley</option>
+                            <option value="8">Civil - Eldian</option>
+                            <option value="9">Civil - Marley</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="input-group-status">
+                    <p>Status</p>
+                    <div class="status-select-4-1" style="width:363px;">
+                        <select name="" id="">
+                            <option value="0">Choose One</option>
+                            <option value="1">Alive</option>
+                            <option value="2">Dead</option>
+                        </select>
+                    </div>
+                </div>
+
+                <input type="submit" value="Add Data">
+            </div>
+        </form>
+    </div>
+
+    <div class="content4-2" id="content-4-2">
+        <form method="post">
             <div class="form-group">
 
                 <div class="input-group-avatar">
@@ -228,7 +339,7 @@
                 
                 <div class="input-group-fraeth">
                     <p>Fraction - Ethnic</p>
-                    <div class="fraeth-select" style="width:363px;">
+                    <div class="fraeth-select-4-1" style="width:363px;">
                         <select name="" id="">
                             <option value="0">Choose One</option>
                             <option value="1">Yeagerist - Eldian</option>
@@ -246,7 +357,7 @@
 
                 <div class="input-group-status">
                     <p>Status</p>
-                    <div class="status-select" style="width:363px;">
+                    <div class="status-select-4-1" style="width:363px;">
                         <select name="" id="">
                             <option value="0">Choose One</option>
                             <option value="1">Alive</option>

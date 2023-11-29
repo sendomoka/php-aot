@@ -8,7 +8,7 @@ html, body{
     height: 100%;
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    overflow-x: hidden;
     background-image: url('../assets/dashboardbg.png');
     background-size: cover;
     background-repeat: repeat;
@@ -165,9 +165,10 @@ html, body{
     display: none;
     position: absolute;
     margin-left: 39%;
-    top: 13%;
+    top: 10%;
     width: 83%;
     height: 90%;
+    overflow: hidden;
 }
 
 .form-group{
@@ -255,7 +256,7 @@ input[type="text"], input[type="password"] {
     font-size: 16px;
 }
 
-.content1 input[type="submit"], .content4 input[type="submit"]{
+.content1 input[type="submit"], .content4-1 input[type="submit"], .content4-2 input[type="submit"]{
     align-items: center;
     width: 40%;
     padding: 12px 20px;
@@ -270,18 +271,9 @@ input[type="text"], input[type="password"] {
     border-radius: 5px;
 }
 
-.content1 input[type="submit"]:hover, .content4 input[type="submit"]:hover{
-    align-items: center;
-    width: 40%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    background-color: #00CC08;
-    cursor: pointer;
-    color: white;
-    font-family: 'Source Serif Pro';
-    font-size: 16px;
-    font-weight: bold;
+.content1 input[type="submit"]:hover{
+    color: black;
+    background-color: yellow;
 }
 
 .content2{
@@ -364,7 +356,7 @@ input[type="text"], input[type="password"] {
     background-color: rgba(0, 0, 0, 0.1);
 }
 
-#leftbutton {
+#leftbutton2 {
     background-color: #468662;
     font-family: 'Source Serif Pro';
     font-size: 16px;
@@ -380,11 +372,11 @@ input[type="text"], input[type="password"] {
     cursor: pointer;
 }
 
-#leftbutton:hover {
+#leftbutton2:hover {
     background-color: #00CC08;
 }
 
-#leftbutton img{
+#leftbutton2 img{
     width: 25px;
     height: auto;
     margin-right: 10px;
@@ -411,7 +403,7 @@ input[type="text"], input[type="password"] {
 
 .content2 table {
     margin-left: 35px;
-    margin-top: 8%;
+    margin-top: 5%;
     width: 95%;
     border-collapse: collapse;
     text-align: center;
@@ -495,7 +487,7 @@ input[type="text"], input[type="password"] {
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
-    background-color: #468662;
+    background-color: #A43F39;
     cursor: pointer;
     color: white;
     font-family: 'Source Serif Pro';
@@ -504,8 +496,14 @@ input[type="text"], input[type="password"] {
     border-radius: 5px;
 }
 
-.content2-1 input[type="submit"]:hover, .content2-2 input[type="submit"]:hover{
+.content2-1 input[type="submit"]:hover{
+    color: black;
     background-color: #00CC08;
+}
+
+.content2-2 input[type="submit"]:hover{
+    color: black;
+    background-color: yellow;
 }
 
 textarea {
@@ -572,7 +570,7 @@ textarea {
     height: 90%;
 }
 
-.content4{
+.content4, .content4-1, .content4-2{
     display: none;
     position: absolute;
     margin-left: 39%;
@@ -581,28 +579,150 @@ textarea {
     height: 90%;
 }
 
-.content4 input[type="submit"]{
-    background-color: #AFA341;
+.content4{
+    margin-left: 17%;
 }
 
-.content4 input[type="submit"]:hover{
+.status-select-4 {
+    position: relative;
+    left: 69%;
+    top: -1%;
+    font-family: 'Source Serif Pro';
+    font-size: 16px;
+}
+  
+.status-select-4 select {
+    display: none;
+}
+
+.fraeth-select-4 {
+    position: relative;
+    left: 52%;
+    top: 4.5%;
+    font-family: 'Source Serif Pro';
+    font-size: 16px;
+}
+  
+.fraeth-select-4 select {
+    display: none;
+}
+
+#leftbutton4 {
+    background-color: #468662;
+    font-family: 'Source Serif Pro';
+    font-size: 16px;
+    color: white;
+    position: absolute;
+    left: 3%;
+    top: 4%;
+    width: 170px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+#leftbutton4:hover {
+    background-color: #00CC08;
+}
+
+#leftbutton4 img{
+    width: 25px;
+    height: auto;
+    margin-right: 10px;
+}
+
+#searchBar4 {
+    position: absolute;
+    top: 4%;
+    right: 2%;
+    width: 250px;
+    height: 40px;
+    background-image: url('../assets/searchicon.png');
+    background-size: 25px 25px;
+    background-color: #484848;
+    font-family: 'Source Serif Pro';
+    font-size: 15px;
+    color: white;
+    padding-left: 50px;
+    background-repeat: no-repeat;
+    background-position: 10px center;
+}
+
+.content4 table {
+    margin-left: 35px;
+    margin-top: 2%;
+    width: 95%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.content4 th {
+    border: 1px solid #ddd;
+    background-color: gray;
+    color: white;
+    padding: 10px;
+}
+
+.content4 th:first-child {
+    width: 50px;
+}
+
+.content4 th:nth-child(2) {
+    width: 150px;
+}
+
+.content4 th:nth-child(3) {
+    width: 300px;
+}
+
+.content4 th:nth-child(4) {
+    width: 300px;
+}
+
+.content4 th:nth-child(5) {
+    width: 200px;
+}
+
+.content4 th:nth-child(6) {
+    width: 150px;
+}
+
+.content4 td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    color: white;
+}
+
+.content4-1 input[type="submit"], .content4-2 input[type="submit"]{
+    background-color: #A43F39;
+}
+
+.content4-1 input[type="submit"]:hover{
+    color: black;
+    background-color: #00E324;
+}
+
+.content4-2 input[type="submit"]:hover{
     color: black;
     background-color: yellow;
 }
 
-.fraeth-select {
+.fraeth-select-4-1 {
     position: relative;
     left: 0%;
     top: 4.5%;
     font-family: 'Source Serif Pro';
     font-size: 16px;
+    height: 50%;
 }
   
-.fraeth-select select {
+.fraeth-select-4-1 select {
     display: none;
 }
 
-.status-select {
+.status-select-4-1 {
     position: relative;
     left: 0%;
     top: 4.5%;
@@ -610,6 +730,7 @@ textarea {
     font-size: 16px;
 }
   
-.status-select select {
+.status-select-4-1 select {
     display: none;
 }
+
