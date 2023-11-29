@@ -64,6 +64,15 @@
 
     <div class="content2" id="content-2">
         <button id="leftbutton"> <img src="assets/addicon.png" alt="icon"> Add Data</button>
+        <div class="time-select" style="width:100px;">
+            <select name="" id="">
+                <option value="0">Time</option>
+                <option value="1">Day 1</option>
+                <option value="2">Day 2</option>
+                <option value="3">Day 3</option>
+                <option value="4">Day 4</option>
+            </select>
+        </div>
         <input type="search" id="searchBar" placeholder="Search...">
 
         <table id="contentTable">
@@ -80,9 +89,9 @@
                 <td>Mitras, Paradise</td>
                 <td>Day 1</td>
                 <td>
-                    <img src="assets/detailicon.png" alt="icon" class="action-img">
-                    <img src="assets/editicon.png" alt="icon" class="action-img">
-                    <img src="assets/deleteicon.png" alt="icon" class="action-img">
+                    <img src="assets/detailicon.png" name="detail" alt="icon" class="action-img">
+                    <img src="assets/editicon.png"  name="edit" alt="icon" class="action-img">
+                    <img src="assets/deleteicon.png" name="delete" alt="icon" class="action-img">
                 </td>
             </tr>
 
@@ -90,79 +99,163 @@
     </div>
 
     <div class="content2-1" id="content-2-1">
-    <form method="post">
-        <div class="form-group">
-
-            <div class="input-group-place">
-                <p>Place</p>
-                <input type="text" name="place" value="Mitras, Paradise">
-            </div>
-            
-            <div class="input-group-detail">
-                <p>Detail</p>
-                <textarea name="detail" id="detail" cols="30" rows="7">Mitras is the opulent capital city and center of power within Wall Sina, where nobles and aristocrats enjoy extravagant wealth detached from commoners struggling daily against the Titan threat outside.</textarea>
-            </div>
-
-            <div class="input-group-time">
-                <p>Time</p>
-                <input type="text" name="time" value="Day 1">
-            </div>
-
-            <div class="input-group-image">
-                <p>Image</p>
-                <label for="timelineUpload" class="timeline-upload-button">Choose Image</label>
-                <input type="file" id="timelineUpload" class="timeline-upload" name="timelineimg" accept=".png, .jpg, .jpeg" style="display: none;">
-            </div>
-
-            <input type="submit" value="Add Data">
-        </div>
-    </form>
-    </div>
-
-    <div class="content3" id="content-3">
         <form method="post">
             <div class="form-group">
 
-                <div class="input-group-nick">
-                    <p>Email</p>
-                    <input type="text" name="nickname" value="jehath">
+                <div class="input-group-place">
+                    <p>Place</p>
+                    <input type="text" name="place">
                 </div>
                 
-                <div class="input-group-name">
-                    <p>Nickname</p>
-                    <input type="text" name="name" value="Jehian Athaya">
+                <div class="input-group-detail">
+                    <p>Detail</p>
+                    <textarea name="detail" id="detail" cols="30" rows="7"></textarea>
                 </div>
 
-                <div class="input-group-pw">
-                    <p>Password</p>
-                    <input type="password" name="password" value="12345">
+                <div class="input-group-time">
+                    <p>Time</p>
+                    <input type="text" name="time">
                 </div>
 
-                <input type="submit" value="Confirm">
+                <div class="input-group-image">
+                    <p>Image</p>
+                    <label for="timelineUpload" class="timeline-upload-button">Choose Image</label>
+                    <input type="file" id="timelineUpload" class="timeline-upload" name="timelineimg" accept=".png, .jpg, .jpeg" style="display: none;">
+                </div>
+
+                <input type="submit" value="Add Data">
             </div>
         </form>
     </div>
 
-    <div class="content4" id="content-4">
+    <div class="content2-2" id="content-2-2">
         <form method="post">
             <div class="form-group">
 
-                <div class="input-group-nick">
-                    <p>JALSKDJAW</p>
-                    <input type="text" name="nickname" value="jehath">
+                <div class="input-group-place">
+                    <p>Place</p>
+                    <input type="text" name="place" value="Mitras, Paradise">
                 </div>
                 
+                <div class="input-group-detail">
+                    <p>Detail</p>
+                    <textarea name="detail" id="detail" cols="30" rows="7">Mitras is the opulent capital city and center of power within Wall Sina, where nobles and aristocrats enjoy extravagant wealth detached from commoners struggling daily against the Titan threat outside.</textarea>
+                </div>
+
+                <div class="input-group-time">
+                    <p>Time</p>
+                    <input type="text" name="time" value="Day 1">
+                </div>
+
+                <div class="input-group-image">
+                    <p>Image</p>
+                    <label for="timelineUpload" class="timeline-upload-button">Choose Image</label>
+                    <input type="file" id="timelineUpload" class="timeline-upload" name="timelineimg" accept=".png, .jpg, .jpeg" style="display: none;">
+                </div>
+
+                <input type="submit" value="Edit Data">
+            </div>
+        </form>
+    </div>
+
+    <div class="content2-3" id="content-2-3">
+        <img src="assets/day1.png" alt="">
+        <span class="time-detail">Time : Day 1</span>
+        <span class="undiscovered-dead">Undiscovered Dead : 83</span>
+        <h1>Mitras, Paradis</h1>
+        <p>Mitras is the opulent capital city and center of power within Wall Sina, where nobles and aristocrats enjoy extravagant wealth detached from commoners struggling daily against the Titan threat outside.</p>
+    </div>
+
+    <div class="content3" id="content-3">
+        <form method="post">
+                <div class="form-group">
+
+                    <div class="input-group-avatar">
+                        <p>Change Avatar</p>
+                        <img src="assets/Vector.png" alt="">
+                    </div>
+
+                    <div class="input-group-2">
+                        <label for="avatarUpload" class="file-upload-button">Choose Image</label>
+                        <input type="file" id="avatarUpload" class="avatar-upload" accept=".png, .jpg, .jpeg" style="display: none;">
+                    </div>
+
+                    <div class="input-group-name">
+                        <p>Name</p>
+                        <input type="text" name="name" value="Jehian Athaya">
+                    </div>                
+
+                    <div class="input-group-nick">
+                        <p>Nickname</p>
+                        <input type="text" name="nickname" value="jehath">
+                    </div>
+                    
+                    
+
+                    <div class="input-group-pw">
+                        <p>Password</p>
+                        <input type="password" name="password" value="12345">
+                    </div>
+
+                    <input type="submit" value="Edit Data">
+                </div>
+            </form>
+    </div>
+
+    <div class="content4" id="content-4">
+    <form method="post">
+            <div class="form-group">
+
+                <div class="input-group-avatar">
+                    <p>Change Avatar</p>
+                    <img src="assets/Vector.png" alt="">
+                </div>
+
+                <div class="input-group-2">
+                    <label for="avatarUpload" class="file-upload-button">Choose Image</label>
+                    <input type="file" id="avatarUpload" class="avatar-upload" accept=".png, .jpg, .jpeg" style="display: none;">
+                </div>
+
                 <div class="input-group-name">
-                    <p>AWSDWA</p>
+                    <p>Name</p>
                     <input type="text" name="name" value="Jehian Athaya">
                 </div>
 
-                <div class="input-group-pw">
-                    <p>ASDWASD</p>
-                    <input type="password" name="password" value="12345">
+                <div class="input-group-nick">
+                    <p>Nickname</p>
+                    <input type="text" name="nickname" value="jehath">
+                </div>
+                
+                <div class="input-group-fraeth">
+                    <p>Fraction - Ethnic</p>
+                    <div class="fraeth-select" style="width:363px;">
+                        <select name="" id="">
+                            <option value="0">Choose One</option>
+                            <option value="1">Yeagerist - Eldian</option>
+                            <option value="2">Alliance - Eldian</option>
+                            <option value="3">Alliance - Marley</option>
+                            <option value="4">Warrior - Marley</option>
+                            <option value="5">Anti Marleyan - Marley</option>
+                            <option value="6">Military - Eldian</option>
+                            <option value="7">Military - Marley</option>
+                            <option value="8">Civil - Eldian</option>
+                            <option value="9">Civil - Marley</option>
+                        </select>
+                    </div>
                 </div>
 
-                <input type="submit" value="Confirm">
+                <div class="input-group-status">
+                    <p>Status</p>
+                    <div class="status-select" style="width:363px;">
+                        <select name="" id="">
+                            <option value="0">Choose One</option>
+                            <option value="1">Alive</option>
+                            <option value="2">Dead</option>
+                        </select>
+                    </div>
+                </div>
+
+                <input type="submit" value="Edit Data">
             </div>
         </form>
     </div>
