@@ -11,19 +11,19 @@
     
     <div class="kiri">
         <a href="index.php">    
-        <img src="assets/aot-logo.png" alt="aot">
+        <img src="assets/images/aot-logo.png" alt="aot">
         </a>
-        <button id="btn1" class="active"> <img src="assets/settingicon.png" alt="icon"> Setting</button>
-        <button id="btn2"> <img src="assets/tlicon.png" alt="icon"> Timeline</button>
-        <button id="btn3"> <img src="assets/deathicon.png" alt="icon"> Death</button>
-        <button id="btn4"> <img src="assets/usericon.png" alt="icon"> User</button>
+        <button id="btn1" class="active"> <img src="assets/images/settingicon.png" alt="icon"> Setting</button>
+        <button id="btn2"> <img src="assets/images/tlicon.png" alt="icon"> Timeline</button>
+        <button id="btn3"> <img src="assets/images/deathicon.png" alt="icon"> Death</button>
+        <button id="btn4"> <img src="assets/images/usericon.png" alt="icon"> User</button>
 
-        <button id="logout"><img src="assets/logouticon.png" alt="icon">Logout</button>
+        <button id="logout"><img src="assets/images/logouticon.png" alt="icon">Logout</button>
     </div>
 
     <div class="atas">
         <h1 id="header">Setting</h1>
-        <img src="assets/Vector.png" alt="">
+        <img src="assets/images/Vector.png" alt="">
         <p class="username">Jehian Athaya</p>
         <p class="role">Eldian</p>
     </div>
@@ -34,7 +34,7 @@
 
                 <div class="input-group-avatar">
                     <p>Change Avatar</p>
-                    <img src="assets/Vector.png" alt="">
+                    <img src="assets/images/Vector.png" alt="">
                 </div>
 
                 <div class="input-group-2">
@@ -63,7 +63,7 @@
     </div>
 
     <div class="content2" id="content-2">
-        <button id="leftbutton2"> <img src="assets/addicon.png" alt="icon"> Add Data</button>
+        <button id="leftbutton2"> <img src="assets/images/addicon.png" alt="icon"> Add Data</button>
         <div class="time-select" style="width:100px;">
             <select name="" id="">
                 <option value="0">Time</option>
@@ -89,9 +89,9 @@
                 <td>Mitras, Paradise</td>
                 <td>Day 1</td>
                 <td>
-                    <img src="assets/detailicon.png" name="detailtimeline" alt="icon" class="action-img">
-                    <img src="assets/editicon.png"  name="edittimeline" alt="icon" class="action-img">
-                    <img src="assets/deleteicon.png" name="deletetimeline" alt="icon" class="action-img">
+                    <img src="assets/detailicon.png" name="detail" alt="icon" class="action-img">
+                    <img src="assets/editicon.png"  name="edit" alt="icon" class="action-img">
+                    <img src="assets/deleteicon.png" name="delete" alt="icon" class="action-img">
                 </td>
             </tr>
 
@@ -159,7 +159,7 @@
     </div>
 
     <div class="content2-3" id="content-2-3">
-        <img src="assets/day1.png" alt="">
+        <img src="assets/images/day1.png" alt="">
         <span class="time-detail">Time : Day 1</span>
         <span class="undiscovered-dead">Undiscovered Dead : 83</span>
         <h1>Mitras, Paradis</h1>
@@ -375,10 +375,10 @@
         <form method="post">
             <div class="form-group">
 
-                <div class="input-group-avatar">
-                    <p>Select Avatar</p>
-                    <img src="assets/Vector.png" alt="">
-                </div>
+                    <div class="input-group-avatar">
+                        <p>Change Avatar</p>
+                        <img src="assets/Vector.png" alt="">
+                    </div>
 
                 <div class="input-group-2">
                     <label for="avatarUpload" class="file-upload-button">Choose Image</label>
@@ -435,7 +435,7 @@
 
                 <div class="input-group-avatar">
                     <p>Change Avatar</p>
-                    <img src="assets/Vector.png" alt="">
+                    <img src="assets/images/Vector.png" alt="">
                 </div>
 
                 <div class="input-group-2">

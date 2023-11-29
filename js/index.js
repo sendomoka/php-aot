@@ -1,9 +1,9 @@
 function ganti_gambar2() {
-    document.images['ereh'].src = 'assets/ereh2.png';
+    document.images['ereh'].src = 'assets/images/ereh2.png';
 }
 
 function ganti_gambar1() {
-    document.images['ereh'].src = 'assets/ereh1.png';
+    document.images['ereh'].src = 'assets/images/ereh1.png';
 }
 
 document.querySelector('img[name="ereh"]').addEventListener('mouseover', function() {

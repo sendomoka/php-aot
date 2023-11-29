@@ -1,3 +1,24 @@
+@font-face {
+    font-family: 'SourceSerif4';
+    src: 
+        url('../assets/fonts/SourceSerif4-Black.ttf') format('ttf'),
+        url('../assets/fonts/SourceSerif4-BlackItalic.ttf') format('ttf'),
+        url('../assets/fonts/SourceSerif4-ExtraBold.ttf') format('ttf'),
+        url('../assets/fonts/SourceSerif4-ExtraBoldItalic.ttf') format('ttf'),
+        url('../assets/fonts/SourceSerif4-Bold.ttf') format('ttf'),
+        url('../assets/fonts/SourceSerif4-BoldItalic.ttf') format('ttf'),
+        url('../assets/fonts/SourceSerif4-SemiBold.ttf') format('ttf'),
+        url('../assets/fonts/SourceSerif4-SemiBoldItalic.ttf') format('ttf'),
+        url('../assets/fonts/SourceSerif4-Medium.ttf') format('ttf'),
+        url('../assets/fonts/SourceSerif4-MediumItalic.ttf') format('ttf'),
+        url('../assets/fonts/SourceSerif4-Regular.ttf') format('ttf'),
+        url('../assets/fonts/SourceSerif4-Italic.ttf') format('ttf'),
+        url('../assets/fonts/SourceSerif4-Light.ttf') format('ttf'),
+        url('../assets/fonts/SourceSerif4-LightItalic.ttf') format('ttf'),
+        url('../assets/fonts/SourceSerif4-ExtraLight.ttf') format('ttf'),
+        url('../assets/fonts/SourceSerif4-ExtraLightItalic.ttf') format('ttf');
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -5,7 +26,7 @@
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'SourceSerif4', serif;
 }
 
 header {

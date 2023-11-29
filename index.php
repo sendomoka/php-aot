@@ -1,10 +1,19 @@
+<?php
+session_start();
+include "config/models.php";
+
+if (!isset($_SESSION['nickname'])) {
+    header("Location: login.php");
+}
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link href='https://fonts.googleapis.com/css?family=Source Serif Pro' rel='stylesheet'>
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
@@ -24,7 +33,7 @@
                             As the Wall Titans unleashed by Eren approach 
                             trampling the earth, the survivors can only 
                             warn of the apocalyptic force that will soon 
-                            destroy everything in it’s path.
+                            destroy everything in it's path.
                         </p>
                     </td>
                 </tr>
@@ -33,9 +42,9 @@
                     <td> 
                         <div class="hover-container">
 
-                                <img name="ereh" src="assets/ereh1.png" alt="" onmouseover="ganti_gambar2()" onmouseout="ganti_gambar1()">
+                                <img name="ereh" src="assets/images/ereh1.png" alt="" onmouseover="ganti_gambar2()" onmouseout="ganti_gambar1()">
                                 <div id="click-text" class="click-text">Click the Founder</div>
-                                <audio id="hover-sound" src="assets/erenroar.mp3" preload="auto" muted></audio>
+                                <audio id="hover-sound" src="assets/audios/erenroar.mp3" preload="auto" muted></audio>
 
                         <div class="hover-text" id="text">
                             <a href="timeline.php" class="button">
@@ -53,7 +62,7 @@
             <table>
                 <tr>
                     <td>
-                        <img src="assets/transform.png" alt="">
+                        <img src="assets/images/transform.png" alt="">
                     </td>
                 </tr>
             </table>
@@ -66,7 +75,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <img id="nextpage2" src="assets/arrow-down.png" alt="arrow">
+                            <img id="nextpage2" src="assets/images/arrow-down.png" alt="arrow">
                         </td>
                     </tr>
                 </table>   
@@ -79,7 +88,7 @@
             <table>
                 <tr>
                     <td>
-                        <img src="assets/brush.png" alt="">
+                        <img src="assets/images/brush.png" alt="">
                         <div class="sub-title">Willy Tybur Speech</div>
                     </td>
                 </tr>
@@ -87,7 +96,7 @@
         </div>
 
         <button id="playButton"></button>
-        <audio id="willyspeech" src="assets/willyspeech.mp3" preload="auto"></audio>
+        <audio id="willyspeech" src="assets/audios/willyspeech.mp3" preload="auto"></audio>
 
         <div class="speechfull" id="speechfull">
             <table>
@@ -135,7 +144,7 @@
         <div class="nextpage3">
             <table>
                     <td>
-                        <img id="nextpage3" src="assets/arrow-down.png" alt="arrow">
+                        <img id="nextpage3" src="assets/images/arrow-down.png" alt="arrow">
                     </td>
                 </tr>
             </table>   
@@ -148,7 +157,7 @@
                 <table>
                     <tr>
                         <td>
-                            <img src="assets/brush.png" alt="">
+                            <img src="assets/images/brush.png" alt="">
                             <div class="sub-title">Prelude</div>
                         </td>
                     </tr>
@@ -160,40 +169,40 @@
             <div class="content3-inner">
 
                 <div class="image-text" id="image-text-1">
-                    <img id="wallmaking" src="assets/wallmaking.png" alt="">
+                    <img id="wallmaking" src="assets/images/wallmaking.png" alt="">
                     <h2>King Karl Fritz Builds the Walls</h2>
                     <p>King Karl Fritz builds 3 massive walls on Paradis Island using the power of the Founding Titan to protect the remnants of the Eldian Empire.</p>
                 </div>
 
-                <img id="arrowright-1" src="assets/arrow-right.png" alt="">
+                <img id="arrowright-1" src="assets/images/arrow-right.png" alt="">
 
                 <div class="image-text" id="image-text-2">
-                    <img id="idiots" src="assets/6idiots.png" alt="">
+                    <img id="idiots" src="assets/images/6idiots.png" alt="">
                     <h2>Marley's Infiltration Plan into Paradis Island</h2>
                     <p>Due to the threat of the Rumbling, Marley plans to infiltrate the "Warrior Unit" into Paradis Island to steal the power of the Titans.</p>
                 </div>
 
-                <img id="arrowright-2" src="assets/arrow-right.png" alt="">
+                <img id="arrowright-2" src="assets/images/arrow-right.png" alt="">
 
                 <div class="image-text" id="image-text-3">
-                    <img id="brainwash" src="assets/brainwash.png" alt="">
+                    <img id="brainwash" src="assets/images/brainwash.png" alt="">
                     <h2>Grisha Yeager Steals the Titan Powers</h2>
                     <p>Grisha Yeager steals the Founding Titan power and slaughters the Reiss family after receiving future memories from Eren.</p>
                 </div>
 
-                <img id="arrowright-3" src="assets/arrow-right.png" alt="">
+                <img id="arrowright-3" src="assets/images/arrow-right.png" alt="">
 
                 <div class="image-text" id="image-text-4">
-                    <img id="brothers" src="assets/brothers.png" alt="">
+                    <img id="brothers" src="assets/images/brothers.png" alt="">
                     <h2>Eren's Plan to Use the Colossal Titans</h2>
                     <p>Eren plans to cooperate temporarily with Zeke in order to gain control over the Colossal Titans within the Walls and destroy all life outside of Paradis Island.</p>
                 </div>
 
             </div>
 
-            <audio id="rock" src="assets/rocksound.mp3" preload="auto"></audio>
-            <audio id="camera" src="assets/camerasound.mp3" preload="auto"></audio>
-            <audio id="whisper" src="assets/brainwash.mp3" preload="auto"></audio>
+            <audio id="rock" src="assets/audios/rocksound.mp3" preload="auto"></audio>
+            <audio id="camera" src="assets/audios/camerasound.mp3" preload="auto"></audio>
+            <audio id="whisper" src="assets/audios/brainwash.mp3" preload="auto"></audio>
 
             <div class="nextpage4">
                 <table>
@@ -202,7 +211,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <img id="nextpage4" src="assets/arrow-down.png" alt="arrow">
+                            <img id="nextpage4" src="assets/images/arrow-down.png" alt="arrow">
                         </td>
                     </tr>
                 </table>   
@@ -212,12 +221,12 @@
     </div>
 
     <div class="container4">
-        <img id="ruin" src="assets/localman.png" alt="">
+        <img id="ruin" src="assets/images/localman.png" style="width: 300px;">
         <div class="eldian">
             <table>
                 <tr>
                     <td>
-                        <img src="assets/eldialogo.png" alt="">
+                        <img src="assets/images/eldialogo.png" alt="">
                     </td>
                 </tr>
                 <tr>
@@ -235,7 +244,7 @@
         <table>
                 <tr>
                     <td>
-                        <img src="assets/marleylogo.png" alt="">
+                        <img src="assets/images/marleylogo.png" alt="">
                     </td>
                 </tr>
                 <tr>

@@ -3,7 +3,7 @@ body, html {
     padding: 0;
     height: 100%;
     width: 100%;
-    background-image: url('../assets/main-bg.png');
+    background-image: url('../assets/images/main-bg.png');
     background-size: cover;
     background-repeat: repeat;
     background-attachment: fixed;
@@ -32,7 +32,7 @@ body, html {
     left: 0;
     height: 100%;
     width: 100%;
-    background-image: url('../assets/marleybg.png');
+    background-image: url('../assets/images/marleybg.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -50,7 +50,7 @@ body, html {
     align-items: center;
     overflow: hidden;
     width: fit-content;
-    background-image: url('../assets/main-bg.png');
+    background-image: url('../assets/images/main-bg.png');
     background-size: 63% 94%;
     background-position: center;
     background-repeat: no-repeat;

@@ -10,11 +10,11 @@
 
 <div class="container">
         <div class="left">
-        <img src="assets/aot-cutted.png" alt="Image">
+        <img src="assets/images/aot-cutted.png" alt="Image">
         </div>
 
         <div class="right">
-        <img src="assets/aot-logo.png" alt="logo">
+        <img src="assets/images/aot-logo.png" alt="logo">
             <div class="loginform">
             <h1>Login</h1>
             <form>
@@ -33,7 +33,7 @@
     </div>
 
     <audio autoplay loop id="audio">
-        <source src="assets/eren-speech.mp3" type="audio/mpeg">
+        <source src="assets/audios/eren-speech.mp3" type="audio/mpeg">
     </audio>
 
     <script>

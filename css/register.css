@@ -1,6 +1,6 @@
 body{
     display: flex;
-    margin-top: 70px;
+    margin-top: 50px;
     justify-content: center;
 }
 
@@ -10,23 +10,23 @@ body{
     bottom: 0;
     min-width: 100%; 
     min-height: 100%;
-  }
+}
 
 .container {
     flex-direction: column;
     align-items: center;
     display: flex;
-    width: 800px;
-    background-image: url('../assets/formbg.png');
-    background-size: cover;
+    height: fit-content;
+    width: 700px;
+    border: 1px solid #484848;
+    background-image: url('../assets/images/formbg.png');
     background-repeat: no-repeat;
+    background-size: cover;
     z-index: 1;
     position: relative;
 }
 
 .container img {
-    width: 70%;
-    height: auto;
     object-fit: cover;
 }
 
@@ -45,49 +45,52 @@ body{
 
 h1{
     color: white;
-    font-family: 'Source Serif Pro';
+    font-weight: 600;
+    font-size: 1.8rem;
+    margin: 0;
 }
 
 p{
-    margin-bottom: 20px;
+    margin: 10px;
     color: #928F8E;
-    font-family: 'Source Serif Pro';
     width: 90%;
     text-align: center;
+    font-size: 14px;
 }
 
 input[type="text"], input[type="password"] {
     align-items: center;
-    width: 80%;
-    padding: 12px 15px;
-    margin: 8px 40px;
-    box-sizing: border-box;
-    background-color: #373737;
+    width: 85%;
+    padding: 14px;
+    margin: 7px 45px;
+    background: rgba(72, 72, 72, 0.60);
     color: #F9F2F2;
+    font-family: 'SourceSerif4', serif;
+}
+
+input[type="password"] {
+    margin-left: 4px;
 }
 
 ::placeholder {
     color: #F9F2F2;
-  }
+}
 
 input[type="submit"]{
     align-items: center;
-    width: 80%;
+    width: 87%;
     padding: 12px 20px;
     margin: 8px 0;
-    box-sizing: border-box;
     background-color: #A43F39;
     color: #F9F2F2;
+    font-family: 'SourceSerif4', serif;
 }
 
-/* input[type="submit"]:hover{
-    transform: scale(1.04);
-    background-color: #21e065;
-} */
 a{
     text-decoration: none;
     color: #928F8E;
-    margin-bottom: 20px;
+    margin: 14px;
+    font-size: 14px;
 }
 
 .image-grid {
@@ -95,8 +98,20 @@ a{
     justify-content: space-around;
     align-items: center;
     width: 50%;
+    gap: 10px;
 }
 
 .image-grid img {
-    margin: 0 10px 20px;
+    width: 260px;
+}
+
+.race-label {
+    cursor: pointer;
+    border: 2px solid transparent;
+    display: inline-block;
+    max-width: 100%; 
+}
+
+.race-label.selected {
+    transform: scale(105%);
 }

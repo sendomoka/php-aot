@@ -2,7 +2,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-image: url('../assets/main-bg.png');
+    background-image: url('../assets/images/main-bg.png');
     background-size: cover;
     background-repeat: repeat;
     background-attachment: fixed;
@@ -12,7 +12,7 @@ body {
 }
 
 img{
-    width: 30%;
+    /* width: 30%; */
     height: auto;
 }
 
@@ -28,26 +28,26 @@ img{
 .container1left{
     width: 450px;
     margin-right: 200px;
+    margin-top: 90px;
 }
 
 .container1right{
     width: auto;
+    margin-top: 40px;
 }
 
 .container1left h1{
     color: white;
-    font-family: 'Source Serif Pro';
     font-size: 63px;
     text-align: left;
-    margin-bottom: -10px;
+    margin-bottom: 10px;
 }
 
 .container1left p{
-    margin-bottom: 40px;
-    color: #928F8E;
-    font-family: 'Source Serif Pro';
+    margin-bottom: 10px;
+    color: #b6b1b1;
     text-align: justify;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 img[name="ereh"]{
@@ -131,47 +131,44 @@ img[name="ereh"]:hover {
     bottom: 0;
     left: 47%;
     transform: translateX(-100%);
+    cursor: pointer;
 }
 
 .nextpage2 p{
     color: #928F8E;
-    font-family: 'Source Serif Pro';
     font-weight: bold;
     font-style: italic;
     text-align: center;
-    font-size: 25px;
-    margin-top: 20px;
+    font-size: 20px;
+    margin-top: 10px;
 }
 
 .nextpage2 img{
     width: 30%;
-    margin-left: 50px;
+    margin-left: 32px;
     margin-bottom: 20px;
 }
 
 .nextpage2 img:hover{
-    width: 30%;
-    margin-left: 50px;
-    margin-bottom: 20px;
-    cursor: pointer;
+    transform: scale(1.3);
 }
 
 .container2{
     display: none;
     justify-content: center;
     align-items: center;
-    background-image: url('../assets/speechfullsize.png');
+    background-image: url('../assets/images/speechfullsize.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 65vh;
+    height: 100vh;
     padding-top: 300px;
     position: relative;
 }
 
 .fuzzy-overlay{
     position: absolute;
-    background-image: url("../assets/noise.png");
+    background-image: url("../assets/images/noise.png");
     top: 0;
     left: 0;
     right: 0;
@@ -199,7 +196,6 @@ img[name="ereh"]:hover {
     left: 55%;
     transform: translate(-50%, -50%);
     color: white;
-    font-family: 'Source Serif Pro';
     font-weight: bold;
     font-style: italic;
     text-align: center;
@@ -274,7 +270,7 @@ img[name="ereh"]:hover {
     margin-bottom: 200px;
     z-index: 2;
     text-align: center;
-    background-image: url('../assets/main-bg.png');
+    background-image: url('../assets/images/main-bg.png');
     background-size:cover;
     background-repeat: no-repeat;
     display: none;
@@ -284,7 +280,6 @@ img[name="ereh"]:hover {
 .speech-part {
     display: none;
     color: red;
-    font-family: 'Source Serif Pro';
     font-weight: bold;
     font-size: 25px;
 }
@@ -292,7 +287,7 @@ img[name="ereh"]:hover {
 .speechshort{
     width: 700px;
     margin-bottom: 200px;
-    background-image: url('../assets/main-bg.png');
+    background-image: url('../assets/images/main-bg.png');
     background-size:cover;
     background-repeat: no-repeat;
     z-index: 2;
@@ -302,14 +297,12 @@ img[name="ereh"]:hover {
 
 .speechshort p{
     color: #928F8E;
-    font-family: 'Source Serif Pro';
     text-align: justify;
     font-size: 20px;
 }
 
 .speechshort small{
     color: #928F8E;
-    font-family: 'Source Serif Pro';
     text-align: center;
 }
 
@@ -322,16 +315,14 @@ img[name="ereh"]:hover {
 }
 
 .nextpage3 img{
-    width: 40%;
-    margin-left: 70px;
+    width: 30%;
+    margin-left: 32px;
     margin-bottom: 20px;
+    cursor: pointer;
 }
 
 .nextpage3 img:hover{
-    width: 40%;
-    margin-left: 70px;
-    margin-bottom: 20px;
-    cursor: pointer;
+    transform: scale(1.3);
 }
 
 @keyframes fadeIn2 {
@@ -355,7 +346,7 @@ img[name="ereh"]:hover {
     display: none;
     justify-content: center;
     align-items: center;
-    height: 65vh;
+    height: 100vh;
     padding-top: 275px;
     padding-bottom: 100px;
     position: relative;
@@ -369,7 +360,7 @@ img[name="ereh"]:hover {
 }
 
 #wallmaking, #idiots, #brainwash, #brothers{
-    width: 300px;
+    width: 220px;
     height: auto;
 }
 
@@ -377,12 +368,11 @@ img[name="ereh"]:hover {
     width: 60px;
     margin: 0 15px;
     display: none;
+    cursor: pointer;
 }
 
-#arrowright-1, #arrowright-2, #arrowright-3:hover{
-    cursor: pointer;
-    width: 60px;
-    margin: 0 15px;
+#arrowright-1:hover, #arrowright-2:hover, #arrowright-3:hover{
+    transform: scale(1.3);
     display: none;
 }
 
@@ -390,7 +380,7 @@ img[name="ereh"]:hover {
     display: none;
     flex-direction: column;
     align-items: center;
-    width: 300px;
+    width: fit-content;
     text-align: center;
 }
 
@@ -401,18 +391,18 @@ img[name="ereh"]:hover {
 
 .image-text h2{
     color: white;
-    font-family: 'Source Serif Pro';
     font-weight: bold;
-    font-size: 25px;
+    font-size: 17px;
     text-align: center;
-    margin-bottom: 20px;
+    margin: 10px;
+    width: 200px;
 }
 
 .image-text p{
     color: #928F8E;
-    font-family: 'Source Serif Pro';
     text-align: center;
-    font-size: 16px;
+    font-size: 14px;
+    width: 220px;
 }
 
 @keyframes fadeIn {
@@ -432,38 +422,36 @@ img[name="ereh"]:hover {
 .nextpage4 {
     position: absolute;
     bottom: 0;
-    left: 55%;
+    left: 52%;
     transform: translateX(-100%);
+    cursor: pointer;
 }
 
 .nextpage4 p{
     color: #928F8E;
-    font-family: 'Source Serif Pro';
     font-weight: bold;
     font-style: italic;
     text-align: center;
-    font-size: 25px;
-    margin-top: 20px;
+    font-size: 20px;
+    margin-bottom: 4px;
+    margin-left: 4px;
 }
 
 .nextpage4 img{
-    width: 40%;
-    margin-left: 40px;
+    width: 30%;
+    margin-left: 32px;
     margin-bottom: 20px;
 }
 
 .nextpage4 img:hover{
-    width: 40%;
-    margin-left: 40px;
-    margin-bottom: 20px;
-    cursor: pointer;
+    transform: scale(1.3);
 }
 
 .container4{
     display: none;
     justify-content: space-between;
     align-items: center;
-    height: 52vh;
+    height: 100vh;
     padding-top: 275px;
     padding-bottom: 100px;
     position: relative;
@@ -481,12 +469,12 @@ img[name="ereh"]:hover {
 }
 
 .marley{
-    background-image: url('../assets/marleybg.png');
+    background-image: url('../assets/images/marleybg.png');
     background-size: cover;
 }
 
 .eldian{
-    background-image: url('../assets/eldianbg.png');
+    background-image: url('../assets/images/eldianbg.png');
     background-size: cover;
 }
 
@@ -500,8 +488,7 @@ img[name="ereh"]:hover {
     display: none;
     align-items: center;
     flex: 1;
-    width: 200px;
-    height: 500px;
+    height: 430px;
     margin: 10px;
     padding: 20px;
     box-sizing: border-box;
@@ -528,7 +515,6 @@ img[name="ereh"]:hover {
 
 .marley h2, .eldian h2{
     color: white;
-    font-family: 'Source Serif Pro';
     font-weight: bold;
     font-size: 30px;
     text-align: center;
@@ -546,10 +532,10 @@ img[name="ereh"]:hover {
 
 .marley p, .eldian p{
     color: black;
-    font-family: 'Source Serif Pro';
     text-align: center;
     font-size: 20px;
     font-weight: bold;
+    margin-top: 20px;
 }
 
 .eldian p{

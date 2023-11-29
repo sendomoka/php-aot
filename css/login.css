@@ -1,6 +1,6 @@
 body{
     display: flex;
-    margin-top: 70px;
+    margin-top: 90px;
     justify-content: center;
 }
 
@@ -17,7 +17,9 @@ body{
     align-items: center;
     display: flex;
     width: 30%;
-    background-image: url('../assets/formbg.png');
+    height: fit-content;
+    border: 1px solid #484848;
+    background-image: url('../assets/images/formbg.png');
     background-size: cover;
     background-repeat: no-repeat;
     z-index: 1;
@@ -25,9 +27,10 @@ body{
 }
 
 .container img {
-    width: 70%;
+    width: 60%;
     height: auto;
     object-fit: cover;
+    margin-top: 25px;
 }
 
 .container form {
@@ -39,24 +42,26 @@ body{
 
 h1{
     color: white;
-    font-family: 'Source Serif Pro';
+    font-size: 25px;
+    margin: 10px;
 }
 
 p{
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     color: #928F8E;
-    font-family: 'Source Serif Pro';
-    width: 90%;
+    width: 80%;
     text-align: center;
+    font-size: 14px;
 }
 
 input[type="text"], input[type="password"] {
     align-items: center;
     width: 80%;
-    padding: 12px 20px;
+    padding: 14px 20px;
     margin: 8px 0;
-    box-sizing: border-box;
-    background-color: #373737
+    color: #F9F2F2;
+    background: rgba(72, 72, 72, 0.60);
+    font-family: 'SourceSerif4', serif;
 }
 
 ::placeholder {
@@ -66,32 +71,23 @@ input[type="text"], input[type="password"] {
 input[type="submit"]{
     align-items: center;
     width: 80%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
+    padding: 14px 20px;
+    margin-top: 8px;
     background-color: #A43F39;
+    color: #f9f2f2;
+    font-family: 'SourceSerif4', serif;
 }
 
 input[type="submit"]:hover{
     cursor: pointer;
-    align-items: center;
-    width: 80%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    background-color: #A43F39;
-}
-
-input[type="submit"]:hover{
-    cursor: pointer;
-    transform: scale(1.04);
     background-color: #21e065;
 }
 
 a{
     text-decoration: none;
     color: #928F8E;
-    margin-bottom: 20px;
+    margin: 20px;
+    font-size: 14px;
 }
 
 

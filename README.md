@@ -1,8 +1,9 @@
-# php-aot
+# Attack On Titan - Rumbling Scene
 
-[![Contributors](https://img.shields.io/badge/contributors-3-orange.svg?style=flat-square)](#contributors)
+[![Contributors](https://img.shields.io/badge/contributors-2-orange.svg?style=flat-square)](#contributors)
+![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg?style=flat-square)
 
-lorem ipsum dolor sit amet, consectetur adipiscing elit. sed non risus. suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.
+<img src="assets/images/attackontitan.png" alt="Attack On Titan" width="120" />
 
 <img src="assets/images/designweb.png" alt="Design Web" width="120" />
 
