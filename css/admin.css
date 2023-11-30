@@ -653,9 +653,9 @@ textarea {
 }
 
 .content3-3{
-    display: flex;
+    display: none;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
     position: absolute;
     margin-left: 17%;
     top: 10%;

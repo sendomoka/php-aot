@@ -21,7 +21,7 @@ buttons.forEach(function(button) {
 // Jangan lupa ini diganti kalo mau ngedit content yang lain
 
 buttons[0].classList.add('active');
-document.getElementById('content-3-3').style.display = 'block';
+document.getElementById('content-2').style.display = 'block';
 
 // Jangan lupa ini diganti
 
@@ -353,7 +353,7 @@ document.querySelector('img[name="editdeath"]').addEventListener('click', functi
 
 document.querySelector('img[name="detaildeath"]').addEventListener('click', function() {
   document.getElementById('content-3').style.display = 'none';
-  document.getElementById('content-3-3').style.display = 'block';
+  document.getElementById('content-3-3').style.display = 'flex';
   headerText.textContent = 'Death - Detail';
 });
 

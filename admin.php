@@ -34,7 +34,7 @@ if (!isset($_SESSION['nickname'])) {
     </div>
 
     <div class="atas">
-        <h1 id="header">Setting</h1>
+        <h1 id="header">Timeline</h1>
         <img src="assets/images/profile_pic/<?= isset($_SESSION['avatar']) && $_SESSION['avatar'] != '' ? $_SESSION['avatar'] : 'user.png' ?>" alt="User Avatar">
         <p class="username"><?= isset($_SESSION['name']) && $_SESSION['name'] != '' ? $_SESSION['name'] : 'Give Name' ?></p>
         <p class="role"><?= isset($_SESSION['fraction_ethnic']) && $_SESSION['fraction_ethnic'] != '' ? $_SESSION['fraction_ethnic'] : 'Give Fraction Ethnic' ?></p>
@@ -303,6 +303,45 @@ if (!isset($_SESSION['nickname'])) {
             <p>Mitras, Paradis</p>
             <p>CAUSE OF DEATH</p>
             <p style="color: red;">KILLED BY MIKASA ACKERMAN</p>
+
+            <p>DAY 1 OF RUMBLING - 854</p>
+        </div>
+
+        <div class="deathdetail">
+            <img src="assets/images/porco.png" alt="">
+            <p>In Honored Memory Of</p>
+            <h2>Porco</h2>
+            <p>Military, Marley</p>
+            <hr>
+            <p>Mitras, Paradis</p>
+            <p>CAUSE OF DEATH</p>
+            <p style="color: red;">EATEN BY FALCO</p>
+
+            <p>DAY 1 OF RUMBLING - 854</p>
+        </div>
+
+        <div class="deathdetail">
+            <img src="assets/images/porco.png" alt="">
+            <p>In Honored Memory Of</p>
+            <h2>Porco</h2>
+            <p>Military, Marley</p>
+            <hr>
+            <p>Mitras, Paradis</p>
+            <p>CAUSE OF DEATH</p>
+            <p style="color: red;">EATEN BY FALCO</p>
+
+            <p>DAY 1 OF RUMBLING - 854</p>
+        </div>
+
+        <div class="deathdetail">
+            <img src="assets/images/porco.png" alt="">
+            <p>In Honored Memory Of</p>
+            <h2>Porco</h2>
+            <p>Military, Marley</p>
+            <hr>
+            <p>Mitras, Paradis</p>
+            <p>CAUSE OF DEATH</p>
+            <p style="color: red;">EATEN BY FALCO</p>
 
             <p>DAY 1 OF RUMBLING - 854</p>
         </div>
