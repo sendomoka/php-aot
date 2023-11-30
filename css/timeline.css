@@ -8,5 +8,79 @@ body {
     background-attachment: fixed;
     margin: 0;
     padding: 0;
-    z-index: 5;
+    z-index: 1;
+    overflow: auto;
+    width: 100%;
+}
+
+.title{
+    position: relative;
+    margin-top: 120px;
+    font-family: 'Source Serif Pro';
+    font-size: 2em;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Source Serif Pro';
+    color: #fff;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 75px;
+    width: 60%;
+    position: relative;
+}
+
+.text-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.time {
+    color: yellow;
+    margin-right: 20px;
+}
+
+.death {
+    color: red;
+}
+
+.text-content p, .text-content h1{
+    margin-bottom: 10px;
+}
+
+.text-content p{
+    font-size: 16px;
+    text-align: justify;
+}
+
+.container img {
+    width: 40%;
+    height: auto;
+    margin-left: 100px;
+}
+
+.circle {
+    position: absolute;
+    left: -10%; /* Adjust this value to move the circle left or right */
+    top: 35%;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #484848;
+}
+
+.line {
+    position: absolute;
+    left: -8.3%;
+    top: 50%;
+    width: 10px;
+    height: 125%;
+    background: #484848;
+    opacity: 0.5;
 }
