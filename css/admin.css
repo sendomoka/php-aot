@@ -10,7 +10,7 @@ body{
 }
 
 .kiri{
-    position: absolute;
+    position: fixed;
     left: 0;
     width: 17%;
     height: 100%;
@@ -129,7 +129,7 @@ body{
 }
 
 .atas{
-    position: absolute;
+    position: fixed;
     margin-left: 17%;
     top: 0;
     width: 83%;
@@ -138,6 +138,10 @@ body{
     border-top: none;
     border-right: none;
     border-left: none;
+    background-image: url('../assets/images/dashboardbg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 5;
 }
 
 .atas h1{
@@ -152,7 +156,7 @@ body{
 .atas img{
     position: relative;
     width: 50px;
-    top: -42%;
+    top: -30%;
     left: 81%;
 }
 
@@ -162,7 +166,7 @@ body{
     color: white;
     margin-top: 2px;
     margin-bottom: 8px;
-    top: -115%;
+    top: -90%;
     left: 86.5%;
 }
 
@@ -171,7 +175,7 @@ body{
     font-size: 0.9em;
     color: gray;
     margin-bottom: 10px;
-    top: -125%;
+    top: -100%;
     left: 86.5%;
 }
 
@@ -279,7 +283,7 @@ input[type="text"], input[type="password"] {
     font-size: 16px;
 }
 
-.content1 input[type="submit"], .content3-1 input[type="submit"], .content3-2 input[type="submit"], .content4-1 input[type="submit"], .content4-2 input[type="submit"]{
+.content1 input[type="submit"], .content3-1 input[type="submit"], .content3-2 input[type="submit"] , .content4-1 input[type="submit"], .content4-2 input[type="submit"]{
     align-items: center;
     width: 40%;
     padding: 12px 20px;
@@ -305,7 +309,7 @@ input[type="text"], input[type="password"] {
     width: 38%;
 }
 
-.content1 input[type="submit"]:hover{
+.content3-2 input[type="submit"]:hover{
     color: black;
     background-color: yellow;
 }
@@ -330,12 +334,47 @@ input[type="text"], input[type="password"] {
 .time-select select {
     display: none;
 }
+
+.timeline-select-3 {
+    position: relative;
+    left: 61%;
+    top: 4.5%;
+    font-family: 'Source Serif Pro';
+    font-size: 16px;
+}
+  
+.timeline-select-3 select {
+    display: none;
+}
+
+.name-select {
+    position: relative;
+    left: -2%;
+    top: 4.5%;
+    font-family: 'Source Serif Pro';
+    font-size: 16px;
+}
+  
+.name-select select {
+    display: none;
+}
+
+.timeline-select3-1 {
+    position: relative;
+    left: -1%;
+    top: 4.5%;
+    font-family: 'Source Serif Pro';
+    font-size: 16px;
+}
+  
+.timeline-select3-1 select {
+    display: none;
+}
   
 .select-selected {
     background-color: #484848;
 }
   
-  /* Style the arrow inside the select element: */
 .select-selected:after{
     position: absolute;
     content: "";
@@ -437,7 +476,7 @@ input[type="text"], input[type="password"] {
 
 .content2 table {
     margin-left: 35px;
-    margin-top: 5%;
+    margin-top: 7%;
     width: 95%;
     border-collapse: collapse;
     text-align: center;
@@ -613,6 +652,17 @@ textarea {
     margin-left: 42%;
 }
 
+.content3-3{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: absolute;
+    margin-left: 17%;
+    top: 10%;
+    width: 83%;
+    height: 90%;
+}
+
 .form-group3, .form-group3-2{
     font-weight: bold;
     color: #928F8E;
@@ -650,18 +700,6 @@ textarea {
     margin-right: 10px;
 }
 
-.timeline-select3 {
-    position: relative;
-    left: 61%;
-    top: 4.5%;
-    font-family: 'Source Serif Pro';
-    font-size: 16px;
-}
-  
-.timeline-select3 select {
-    display: none;
-}
-
 #searchBar3 {
     position: absolute;
     top: 4%;
@@ -681,7 +719,7 @@ textarea {
 
 .content3 table {
     margin-left: 35px;
-    margin-top: 6%;
+    margin-top: 7%;
     width: 95%;
     border-collapse: collapse;
     text-align: center;
@@ -720,28 +758,59 @@ textarea {
     color: white;
 }
 
-.name-select {
+.deathdetail{
     position: relative;
-    left: -2%;
-    top: 4.5%;
-    font-family: 'Source Serif Pro';
-    font-size: 16px;
-}
-  
-.name-select select {
-    display: none;
+    background-image: url('../assets/images/deathbg2.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 350px;
+    height: 550px;
+    text-align: center;
+    flex: 1 0 30%;
+    max-width: 30%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 50px;
 }
 
-.timeline-select3-1 {
-    position: relative;
-    left: -1.5%;
-    top: 4.5%;
-    font-family: 'Source Serif Pro';
-    font-size: 16px;
+img[name="leaf"]{
+    position: absolute;
+    top: 22%;
+    left: 25%;
+    width: 100%;
+    z-index: 2;
 }
-  
-.timeline-select3-1 select {
-    display: none;
+
+.deathdetail img{
+    position: relative;
+    top: -2%;
+    width: 150px;
+    height: 200px;
+    z-index: 1;
+}
+
+hr{
+    color: white;
+    width: 70%;
+    margin-top: 10px;
+}
+
+.deathdetail h2{
+    font-family: 'Source Serif Pro';
+    font-weight: bold;
+    color: white;
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+
+.deathdetail p{
+    font-family: 'Source Serif Pro';
+    font-weight: bold;
+    color: white;
+    margin-top: 5px;
 }
 
 .content4, .content4-1, .content4-2{
@@ -826,7 +895,7 @@ textarea {
 
 .content4 table {
     margin-left: 35px;
-    margin-top: 2%;
+    margin-top: 4%;
     width: 95%;
     border-collapse: collapse;
     text-align: center;
@@ -878,7 +947,7 @@ textarea {
     background-color: #00E324;
 }
 
-.content4-2 input[type="submit"]:hover, .content3-2 input[type="submit"]:hover{
+.content4-2 input[type="submit"]:hover{
     color: black;
     background-color: yellow;
 }

@@ -67,9 +67,9 @@ if (!isset($_SESSION['nickname'])) {
                 <td>Mitras, Paradise</td>
                 <td>Day 1</td>
                 <td>
-                    <img src="assets/images/detailicon.png" name="detail" alt="icon" class="action-img">
-                    <img src="assets/images/editicon.png"  name="edit" alt="icon" class="action-img">
-                    <img src="assets/images/deleteicon.png" name="delete" alt="icon" class="action-img">
+                    <img src="assets/images/detailicon.png" name="detailtimeline" alt="icon" class="action-img">
+                    <img src="assets/images/editicon.png"  name="edittimeline" alt="icon" class="action-img">
+                    <img src="assets/images/deleteicon.png" name="deletetimeline" alt="icon" class="action-img">
                 </td>
             </tr>
 
@@ -147,7 +147,7 @@ if (!isset($_SESSION['nickname'])) {
     <div class="content3" id="content-3">
         <button id="leftbutton3"> <img src="assets/images/addicon.png" alt="icon"> Add Data</button>
 
-        <div class="timeline-select3" style="width:200px;">
+        <div class="timeline-select-3" style="width:200px;">
             <select name="" id="">
                 <option value="0">Timeline</option>
                 <option value="1">Mitras, Paradis</option>
@@ -159,6 +159,7 @@ if (!isset($_SESSION['nickname'])) {
                 <option value="7">Fort Salta, Marley</option>
             </select>
         </div>
+
         <input type="search" id="searchBar3" placeholder="Search...">
 
         <table id="contentTable">
@@ -293,8 +294,33 @@ if (!isset($_SESSION['nickname'])) {
     </div>
 
     <div class="content3-3" id="content-3-3">
+        <div class="deathdetail">
+            <img src="assets/images/koslow.png" alt="">
+            <p>In Honored Memory Of</p>
+            <h2>KOSLOW</h2>
+            <p>Military, Marley</p>
+            <hr>
+            <p>Mitras, Paradis</p>
+            <p>CAUSE OF DEATH</p>
+            <p style="color: red;">KILLED BY MIKASA ACKERMAN</p>
 
+            <p>DAY 1 OF RUMBLING - 854</p>
+        </div>
+
+        <div class="deathdetail">
+            <img src="assets/images/porco.png" alt="">
+            <p>In Honored Memory Of</p>
+            <h2>Porco</h2>
+            <p>Military, Marley</p>
+            <hr>
+            <p>Mitras, Paradis</p>
+            <p>CAUSE OF DEATH</p>
+            <p style="color: red;">EATEN BY FALCO</p>
+
+            <p>DAY 1 OF RUMBLING - 854</p>
+        </div>
     </div>
+    
 
     <div class="content4" id="content-4">
         <button id="leftbutton4"> <img src="assets/images/addicon.png" alt="icon"> Add Data</button>
@@ -464,31 +490,7 @@ if (!isset($_SESSION['nickname'])) {
             </div>
         </form>
     </div>
-    <script>
-        // Menampilkan content-1 secara default
-        document.getElementById('content-2').style.display = 'block';
 
-        // Menangani event klik pada tombol-tombol di sisi kiri
-        var buttons = document.querySelectorAll('.kiri button');
-
-        buttons.forEach(function(button) {
-            button.addEventListener('click', function() {
-                buttons.forEach(function(btn) {
-                    btn.classList.remove('active');
-                });
-
-                this.classList.add('active');
-
-                var contents = document.querySelectorAll('[id^="content-"]');
-                contents.forEach(function(content) {
-                    content.style.display = 'none';
-                });
-
-                var contentId = 'content-' + this.id.replace('btn', '');
-                document.getElementById(contentId).style.display = 'block';
-            });
-        });
-    </script>
     <script src="js/admin.js"> </script>
 </body>
 </html>
