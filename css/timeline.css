@@ -67,7 +67,7 @@ body {
 
 .circle {
     position: absolute;
-    left: -10%; /* Adjust this value to move the circle left or right */
+    left: -10%;
     top: 35%;
     width: 40px;
     height: 40px;
@@ -83,4 +83,15 @@ body {
     height: 125%;
     background: #484848;
     opacity: 0.5;
+}
+
+.circle-img {
+    position: absolute;
+    left: -15%;
+    top: 33%;
+    width: 130px;
+    height: 80px;
+    background-image: url('../assets/images/ereh1.png');
+    background-size: cover;
+    background-position: center;
 }
