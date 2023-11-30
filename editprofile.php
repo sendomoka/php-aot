@@ -2,6 +2,10 @@
 session_start();
 include "config/models.php";
 
+if (!isset($_SESSION['nickname'])) {
+    header("Location: login.php");
+}
+
 $id = $_GET['id'];
 if (isset($_POST['editprofile'])) {
     $nickname = $_POST['nickname'];
@@ -50,9 +54,6 @@ $user = editProfile_getUserById($id);
             </tr>
             <tr>
                 <td colspan="2" align="center"><input type="submit" name="editprofile" value="Edit Profile"></td>
-            </tr>
-            <tr>
-                <td colspan="2" align="center"><a class="logout" href="logout.php">Logout</a></td>
             </tr>
         </table>
         </form>

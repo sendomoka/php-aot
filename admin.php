@@ -1,19 +1,31 @@
+<?php
+session_start();
+include 'config/models.php';
+
+if (!isset($_SESSION['nickname'])) {
+    header("Location: login.php");
+} else {
+    if ($_SESSION['role'] != 'Admin') {
+        header("Location: index.php");
+    }
+}
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-    <link href='https://fonts.googleapis.com/css?family=Source Serif Pro' rel='stylesheet'>
-    <link rel="stylesheet" href="css/dashboard.css">
+    <title>Admin - AoT Rumbling</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
 </head>
 <body>
-    
     <div class="kiri">
         <a href="index.php">    
-        <img src="assets/images/aot-logo.png" alt="aot">
+            <img src="assets/images/aot-logo.png" alt="aot">
         </a>
-        <button id="btn1" class="active"> <img src="assets/images/settingicon.png" alt="icon"> Setting</button>
         <button id="btn2"> <img src="assets/images/tlicon.png" alt="icon"> Timeline</button>
         <button id="btn3"> <img src="assets/images/deathicon.png" alt="icon"> Death</button>
         <button id="btn4"> <img src="assets/images/usericon.png" alt="icon"> User</button>
@@ -23,43 +35,9 @@
 
     <div class="atas">
         <h1 id="header">Setting</h1>
-        <img src="assets/images/Vector.png" alt="">
-        <p class="username">Jehian Athaya</p>
-        <p class="role">Eldian</p>
-    </div>
-
-    <div class="content1" id="content-1">
-        <form method="post">
-            <div class="form-group">
-
-                <div class="input-group-avatar">
-                    <p>Change Avatar</p>
-                    <img src="assets/images/Vector.png" alt="">
-                </div>
-
-                <div class="input-group-2">
-                    <label for="avatarUpload" class="file-upload-button">Choose Image</label>
-                    <input type="file" id="avatarUpload" class="avatar-upload" accept=".png, .jpg, .jpeg" style="display: none;">
-                </div>
-
-                <div class="input-group-nick">
-                    <p>Nickname</p>
-                    <input type="text" name="nickname" value="jehath">
-                </div>
-                
-                <div class="input-group-name">
-                    <p>Name</p>
-                    <input type="text" name="name" value="Jehian Athaya">
-                </div>
-
-                <div class="input-group-pw">
-                    <p>Password</p>
-                    <input type="password" name="password" value="12345">
-                </div>
-
-                <input type="submit" value="Edit Data">
-            </div>
-        </form>
+        <img src="assets/images/profile_pic/<?= isset($_SESSION['avatar']) && $_SESSION['avatar'] != '' ? $_SESSION['avatar'] : 'user.png' ?>" alt="User Avatar">
+        <p class="username"><?= isset($_SESSION['name']) && $_SESSION['name'] != '' ? $_SESSION['name'] : 'Give Name' ?></p>
+        <p class="role"><?= isset($_SESSION['fraction_ethnic']) && $_SESSION['fraction_ethnic'] != '' ? $_SESSION['fraction_ethnic'] : 'Give Fraction Ethnic' ?></p>
     </div>
 
     <div class="content2" id="content-2">
@@ -89,9 +67,9 @@
                 <td>Mitras, Paradise</td>
                 <td>Day 1</td>
                 <td>
-                    <img src="assets/detailicon.png" name="detail" alt="icon" class="action-img">
-                    <img src="assets/editicon.png"  name="edit" alt="icon" class="action-img">
-                    <img src="assets/deleteicon.png" name="delete" alt="icon" class="action-img">
+                    <img src="assets/images/detailicon.png" name="detail" alt="icon" class="action-img">
+                    <img src="assets/images/editicon.png"  name="edit" alt="icon" class="action-img">
+                    <img src="assets/images/deleteicon.png" name="delete" alt="icon" class="action-img">
                 </td>
             </tr>
 
@@ -167,7 +145,7 @@
     </div>
 
     <div class="content3" id="content-3">
-        <button id="leftbutton3"> <img src="assets/addicon.png" alt="icon"> Add Data</button>
+        <button id="leftbutton3"> <img src="assets/images/addicon.png" alt="icon"> Add Data</button>
 
         <div class="timeline-select3" style="width:200px;">
             <select name="" id="">
@@ -199,9 +177,9 @@
                 <td></td>
                 <td></td>
                 <td>
-                    <img src="assets/detailicon.png" name="detaildeath" alt="icon" class="action-img">
-                    <img src="assets/editicon.png"  name="editdeath" alt="icon" class="action-img">
-                    <img src="assets/deleteicon.png" name="deletedeath" alt="icon" class="action-img">
+                    <img src="assets/images/detailicon.png" name="detaildeath" alt="icon" class="action-img">
+                    <img src="assets/images/editicon.png"  name="editdeath" alt="icon" class="action-img">
+                    <img src="assets/images/deleteicon.png" name="deletedeath" alt="icon" class="action-img">
                 </td>
             </tr>
 
@@ -319,7 +297,7 @@
     </div>
 
     <div class="content4" id="content-4">
-        <button id="leftbutton4"> <img src="assets/addicon.png" alt="icon"> Add Data</button>
+        <button id="leftbutton4"> <img src="assets/images/addicon.png" alt="icon"> Add Data</button>
 
         <div class="fraeth-select-4" style="width:200px;">
                 <select name="" id="">
@@ -363,8 +341,8 @@
                 <td></td>
                 <td></td>
                 <td>
-                    <img src="assets/editicon.png"  name="edituser" alt="icon" class="action-img">
-                    <img src="assets/deleteicon.png" name="deleteuser" alt="icon" class="action-img">
+                    <img src="assets/images/editicon.png"  name="edituser" alt="icon" class="action-img">
+                    <img src="assets/images/deleteicon.png" name="deleteuser" alt="icon" class="action-img">
                 </td>
             </tr>
 
@@ -377,7 +355,7 @@
 
                     <div class="input-group-avatar">
                         <p>Change Avatar</p>
-                        <img src="assets/Vector.png" alt="">
+                        <img src="assets/images/Vector.png" alt="">
                     </div>
 
                 <div class="input-group-2">
@@ -486,7 +464,31 @@
             </div>
         </form>
     </div>
+    <script>
+        // Menampilkan content-1 secara default
+        document.getElementById('content-2').style.display = 'block';
 
-    <script src="js/dashboard.js"> </script>
+        // Menangani event klik pada tombol-tombol di sisi kiri
+        var buttons = document.querySelectorAll('.kiri button');
+
+        buttons.forEach(function(button) {
+            button.addEventListener('click', function() {
+                buttons.forEach(function(btn) {
+                    btn.classList.remove('active');
+                });
+
+                this.classList.add('active');
+
+                var contents = document.querySelectorAll('[id^="content-"]');
+                contents.forEach(function(content) {
+                    content.style.display = 'none';
+                });
+
+                var contentId = 'content-' + this.id.replace('btn', '');
+                document.getElementById(contentId).style.display = 'block';
+            });
+        });
+    </script>
+    <script src="js/admin.js"> </script>
 </body>
 </html>

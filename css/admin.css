@@ -1,10 +1,4 @@
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-html, body{
+body{
     height: 100%;
     margin: 0;
     padding: 0;
@@ -29,7 +23,7 @@ html, body{
 .kiri img{
     position: relative;
     top: -2%;
-    height: 100px;
+    height: 70px;
     width: 100%;
 }
 
@@ -66,6 +60,26 @@ html, body{
     display: flex;
     align-items: center;
     justify-content: center;
+    width: fit-content;
+}
+
+#btn1 {
+    padding: 0 5.1rem;
+    margin-left: -13px;
+}
+
+#btn2 {
+    padding: 0 4.2rem;
+}
+
+#btn3 {
+    padding: 0 5.55rem;
+    margin-left: -20px;
+}
+
+#btn4 {
+    padding: 0 6.12rem;
+    margin-left: -26px;
 }
 
 #btn1 img, #btn2 img, #btn3 img, #btn4 img{
@@ -138,18 +152,18 @@ html, body{
 .atas img{
     position: relative;
     width: 50px;
-    top: -35%;
-    left: 85%;
+    top: -42%;
+    left: 81%;
 }
 
 .atas .username {
     position: relative;
     font-weight: bold;
     color: white;
-    margin-top: 10px;
-    margin-bottom: 15px;
+    margin-top: 2px;
+    margin-bottom: 8px;
     top: -115%;
-    left: 90%;
+    left: 86.5%;
 }
 
 .atas .role {
@@ -158,7 +172,7 @@ html, body{
     color: gray;
     margin-bottom: 10px;
     top: -125%;
-    left: 90%;
+    left: 86.5%;
 }
 
 .content1{
@@ -183,6 +197,8 @@ html, body{
 
 .input-group-avatar img{
     width: 10%;
+    border-radius: 50%;
+    margin-left: -12px;
 }
 
 .input-group-avatar, .input-group-2, .input-group-nick, .input-group-name, .input-group-pw, .input-group-place, .input-group-detail, .input-group-time, .input-group-image, 
@@ -231,11 +247,10 @@ input[type="text"], input[type="password"] {
     width: 30%;
     padding: 12px 20px;
     margin: 8px 0;
-    box-sizing: border-box;
     background-color: #373737;
     color: white;
     font-size: 15px;
-    border-radius: 5px;
+    font-family: 'SourceSerif4', serif;
 }
 
 .file-upload-button{
@@ -269,14 +284,21 @@ input[type="text"], input[type="password"] {
     width: 40%;
     padding: 12px 20px;
     margin: 8px 0;
-    box-sizing: border-box;
     background-color: #A43F39;
     cursor: pointer;
     color: white;
-    font-family: 'Source Serif Pro';
+    font-family: 'SourceSerif4', serif;
     font-size: 16px;
     font-weight: bold;
-    border-radius: 5px;
+}
+
+.editbutton {
+    background: #afa341 !important;    
+}
+
+.editbutton:hover {
+    color: white !important;
+    background: #ead855 !important;
 }
 
 .content3-1 input[type="submit"], .content3-2 input[type="submit"]{

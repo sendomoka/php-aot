@@ -53,6 +53,78 @@
     text-align: left;
 }
 
+.user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: white;
+}
+
+.text-user {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.text-user .username {
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.text-user .role {
+    font-size: 14px;
+    color: gray;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: black;
+    min-width: 160px;
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: .5rem;
+    padding: 1rem;
+    border-top: 10px solid gray;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+}
+
+.dropdown-content a.admin {
+    background-color: #468662;
+}
+
+.dropdown-content a.edit {
+    background-color: #afa341;
+}
+
+.dropdown-content a.logout {
+    background-color: #a43f39;
+}
+
+.dropdown-content a:hover {
+    background-color: gray;
+}
+
 </style>
 
     <header class="header">
@@ -61,16 +133,27 @@
                 <img src="assets/images/aot-logo.png" alt="Logo">
             </a>
         </div>
-    
         <div class="right-side">
-            <a href="<?= isset($_SESSION['role']) && $_SESSION['role'] === 'Admin' ? 'admin' : 'editprofile.php?id=' . (isset($_SESSION['id']) ? $_SESSION['id'] : ''); ?>">
-                <img src="assets/images/profile_pic/<?= isset($_SESSION['avatar']) && $_SESSION['avatar'] != '' ? $_SESSION['avatar'] : 'user.png' ?>" alt="User Image">
-            </a>
-            <div class="user-info">
-                <p class="username"><?= isset($_SESSION['name']) && $_SESSION['name'] != '' ? $_SESSION['name'] : 'Give Name' ?></p>
-                <p class="role"><?= isset($_SESSION['fraction_ethnic']) && $_SESSION['fraction_ethnic'] != '' ? $_SESSION['fraction_ethnic'] : 'Give Fraction Ethnic' ?></p>
+            <div class="dropdown">
+                <a class="user" href="#">
+                    <img src="assets/images/profile_pic/<?= isset($_SESSION['avatar']) && $_SESSION['avatar'] != '' ? $_SESSION['avatar'] : 'user.png' ?>" alt="User Image">
+                    <div class="text-user">
+                        <p class="username"><?= isset($_SESSION['name']) && $_SESSION['name'] != '' ? $_SESSION['name'] : 'Give Name' ?></p>
+                        <p class="role"><?= isset($_SESSION['fraction_ethnic']) && $_SESSION['fraction_ethnic'] != '' ? $_SESSION['fraction_ethnic'] : 'Give Fraction Ethnic' ?></p>
+                    </div>
+                </a>
+                <div class="dropdown-content">
+                    <?php
+                    if (isset($_SESSION['role']) && $_SESSION['role'] === 'Admin') {
+                        echo '<a class="admin" href="admin.php">Admin Panel</a>';
+                    }
+                    ?>
+                    <a class="edit" href="editprofile.php?id=<?= isset($_SESSION['id']) ? $_SESSION['id'] : '' ?>">Edit Profile</a>
+                    <a class="logout" href="logout.php">Logout</a>
+                </div>
             </div>
         </div>
+
     </header>
 <script>
     document.addEventListener("DOMContentLoaded", function () {

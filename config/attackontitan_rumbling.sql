@@ -1,7 +1,3 @@
-DROP DATABASE IF EXISTS attackontitan_rumbling;
-CREATE DATABASE attackontitan_rumbling;
-USE attackontitan_rumbling;
-
 CREATE TABLE user (
     id int PRIMARY KEY AUTO_INCREMENT,
     nickname varchar(50),
