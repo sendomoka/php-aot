@@ -12,12 +12,19 @@ if (!isset($_SESSION['nickname'])) {
 
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
-
-    $query = mysqli_query($conn, "DELETE FROM death WHERE id = '$id'");
-    if ($query) {
-        header("Location: admin_death.php");
+    $queryuser = mysqli_query($conn, "SELECT userid FROM death WHERE id = '$id'");
+    $datauser = mysqli_fetch_assoc($queryuser);
+    $userid = $datauser['userid'];
+    $querydelete = mysqli_query($conn, "DELETE FROM death WHERE id = '$id'");
+    if ($querydelete) {
+        $makealive = mysqli_query($conn, "UPDATE user SET status = 'Alive' WHERE id = '$userid'");
+        if ($makealive) {
+            echo "User is alive now.";
+        } else {
+            echo "Error: " . $makealive . "<br>" . mysqli_error($conn);
+        }
     } else {
-        echo "Error: " . $query . "<br>" . mysqli_error($conn);
+        echo "Error: " . $querydelete . "<br>" . mysqli_error($conn);
     }
 }
 ?>

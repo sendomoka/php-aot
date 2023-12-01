@@ -12,7 +12,10 @@ if (!isset($_SESSION['nickname'])) {
 
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
-    $query = mysqli_query($conn, "SELECT * FROM death WHERE id = '$id'");
+    $query = mysqli_query($conn, "SELECT death.*, user.name, user.fraction_ethnic, COALESCE(timeline.place, '(not found)') as place, timeline.time FROM death
+    INNER JOIN user ON death.userid = user.id
+    LEFT JOIN timeline ON death.timelineid = timeline.id
+    WHERE death.id = '$id'");
     $data = mysqli_fetch_array($query);
 }
 ?>
@@ -38,13 +41,13 @@ if (isset($_GET['id'])) {
                 <img src="assets/images/death/<?= $data['image'] ?>" alt="image">
             </div>
             <div class="card-text">
-                <p>In Honored Memory Of</p>
-                <h3><?= $data['name'] ?></h3>
+                <b>In Honored Memory Of</b>
+                <h1><?= $data['name'] ?></h1>
                 <p><?= $data['fraction_ethnic'] ?></p>
                 <hr>
                 <p><?= $data['place'] ?></p>
-                <p>CAUSE OF DEATH</p>
-                <p><?= $data['cause'] ?></p>
+                <small>CAUSE OF DEATH</small>
+                <small><?= $data['cause'] ?></small>
                 <p><?= $data['time'] ?> OF RUMBLING - 854</p>
             </div>
         </div>

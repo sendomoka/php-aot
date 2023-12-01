@@ -75,7 +75,10 @@ $data = mysqli_fetch_array($query);
                     </tr>
                     <tr>
                         <td>Image</td>
-                        <td><input type="file" name="image" accept="image/*" required></td>
+                        <td>
+                            <input type="file" name="image" accept="image/*" required>
+                            <img src="../assets/images/death/<?= $data['image'] ?>" style="width: 70px"><?= $data['image'] ?>
+                        </td>
                     </tr>
                     <tr>
                         <td colspan="2"><input type="submit" name="update" value="Update"></td>

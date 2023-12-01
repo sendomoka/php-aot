@@ -31,11 +31,16 @@ if (isset($_POST['insert'])) {
         $timelinequery = mysqli_query($conn, "SELECT * FROM timeline WHERE place = '$place'");
         $timelinedata = mysqli_fetch_array($timelinequery);
         $place = $timelinedata['id'];
-        $query = mysqli_query($conn, "INSERT INTO death (userid, timelineid, cause, image) VALUES ('$name', '$place', '$cause', '$image')");
-        if ($query) {
-            header("Location: admin_death.php");
+        $queryinsert = mysqli_query($conn, "INSERT INTO death (userid, timelineid, cause, image) VALUES ('$name', '$place', '$cause', '$image')");
+        if ($queryinsert) {
+            $makedead = mysqli_query($conn, "UPDATE user SET status = 'Dead' WHERE id = '$name'");
+            if ($makedead) {
+                echo "<script>alert('Make user death successfully!')</script>";
+            } else {
+                echo "Error: " . $makedead . "<br>" . mysqli_error($conn);
+            }
         } else {
-            echo "Error: " . $query . "<br>" . mysqli_error($conn);
+            echo "Error: " . $queryinsert . "<br>" . mysqli_error($conn);
         }
     }
 }
