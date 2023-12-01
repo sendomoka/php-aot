@@ -2,6 +2,10 @@ DROP DATABASE IF EXISTS attackontitan_rumbling;
 CREATE DATABASE attackontitan_rumbling;
 USE attackontitan_rumbling;
 
+DROP TABLE IF EXISTS death;
+DROP TABLE IF EXISTS user;
+DROP TABLE IF EXISTS timeline;
+
 CREATE TABLE user (
     id int PRIMARY KEY AUTO_INCREMENT,
     nickname varchar(50),
@@ -12,6 +16,7 @@ CREATE TABLE user (
     status varchar(20),
     role varchar(20)
 );
+
 
 CREATE TABLE timeline (
     id int PRIMARY KEY AUTO_INCREMENT,
