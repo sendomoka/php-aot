@@ -29,14 +29,16 @@ $eren = mysqli_fetch_assoc($erenstatus);
             $query = mysqli_query($conn, "SELECT * FROM timeline ORDER BY id ASC");
             if(mysqli_num_rows($query) > 0) {
                 while($row = mysqli_fetch_array($query)){
+                    echo "<a href='timeline_detail.php?id=$row[id]' style='text-decoration: none'>";
                     echo "<div class='container'>";
                     echo "<div class='text-content'>";
                     echo "<h1>$row[place]</h1>";
                     echo "<p style='color: #b2adad'>$row[details]</p>";
-                    echo "<p><span class='time'>Time : $row[time]</span>  <span class='death'>Death : $row[undiscovered_death]</span></p>";
+                    echo "<p><span class='time'>Time : $row[time]</span>  <span class='death'>Undiscovered Death : $row[undiscovered_death]</span></p>";
                     echo "</div>";
                     echo "<img src='assets/images/timeline/$row[image]' alt='Your Image'>";
                     echo "</div>";
+                    echo "</a>";
                 }
             } else {
                 echo "<p style='margin: 0 auto; color: white'>Rumbling not started.</p>";

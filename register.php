@@ -58,12 +58,9 @@ if(isset($_POST['register'])) {
     </div>
     <script>
         function selectRace(race) {
-            // Reset semua label terlebih dahulu
             document.querySelectorAll('.race-label').forEach(function(label) {
                 label.classList.remove('selected');
             });
-
-            // Tandai label sesuai dengan gambar yang diklik
             if (race === 'eldian') {
                 document.querySelector('#eldian-radio').checked = true;
                 document.querySelector('#eldian-label').classList.add('selected');

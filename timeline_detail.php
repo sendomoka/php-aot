@@ -4,10 +4,6 @@ include "config/models.php";
 
 if (!isset($_SESSION['nickname'])) {
     header("Location: login.php");
-} else {
-    if ($_SESSION['role'] != 'Admin') {
-        header("Location: index.php");
-    }
 }
 
 if (isset($_GET['id'])) {
@@ -27,17 +23,33 @@ if (isset($_GET['id'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detail Timeline | Admin | AoT Rumbling</title>
-    <link rel="stylesheet" href="css/admin_main.css">
+    <title>Detail Timeline | AoT Rumbling</title>
     <link rel="stylesheet" href="css/admin_timeline_detail.css">
+    <link rel="stylesheet" href="css/style.css">
     <style>
-        a[href="admin_timeline.php"] {
-            background: gray;
+        body {
+            background-image: url('../assets/images/main-bg.png');
+            background-size: cover;
+            background-repeat: repeat;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+        }
+        main {
+            margin-top: 8rem;
+        }
+        .card {
+            background-color: black;
+            color: white;
+            margin: 10px;
+        }
+        .card-image {
+            margin-left: 35px;
         }
     </style>
 </head>
 <body>
-    <?php include "admin_nav.php" ?>
+<?php include "components/header.php" ?>
     <main>
         <img src="assets/images/timeline/<?= $dataTimeline['image'] ?>">
         <div class="text">
@@ -45,7 +57,7 @@ if (isset($_GET['id'])) {
                 <p>Time : <?= $dataTimeline['time'] ?></p>
                 <p>Undiscovered Death : <?= $dataTimeline['undiscovered_death'] ?></p>
             </div>
-            <h1><?= $dataTimeline['place'] ?></h1>
+            <h1 style="color: white"><?= $dataTimeline['place'] ?></h1>
             <p><?= $dataTimeline['details'] ?></p>
         </div>
         <div class="grid">

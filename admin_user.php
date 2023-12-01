@@ -82,8 +82,10 @@ if (isset($_GET['id'])) {
                 <th>Action</th>
             </tr>
             <?php
+            $recordsPerPage = 6;
             $page = isset($_GET['page']) ? $_GET['page'] : 1;
-            $no = ($page - 1) * 7 + 1;
+            $offset = ($page - 1) * $recordsPerPage;
+            $no = 1 + $offset;
             if (isset($_GET['btnsearch'])) {
                 $search = $_GET['insearch'];
                 $query = "SELECT * FROM user WHERE name LIKE '%$search%' OR fraction_ethnic LIKE '%$search%' OR status LIKE '%$search%'";
@@ -94,7 +96,7 @@ if (isset($_GET['id'])) {
                 $status = $_GET['status'];
                 $query = "SELECT * FROM user WHERE status = '$status'";
             } else {
-                $query = "SELECT * FROM user";
+                $query = "SELECT * FROM user LIMIT $offset, $recordsPerPage";
             }
             $result = mysqli_query($conn, $query);
             while($row = mysqli_fetch_array($result)) {
@@ -128,9 +130,9 @@ if (isset($_GET['id'])) {
         </table>
         <div class="pagination">
             <?php
-                $query = mysqli_query($conn, "SELECT * FROM death");
+                $query = mysqli_query($conn, "SELECT * FROM user");
                 $count = mysqli_num_rows($query);
-                $total = ceil($count / 7);
+                $total = ceil($count / $recordsPerPage);
                 for ($i = 1; $i <= $total; $i++) {
                     echo "<a href='?page=$i'>$i</a>";
                 }

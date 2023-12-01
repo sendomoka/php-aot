@@ -39,7 +39,7 @@ if (isset($_POST['insert'])) {
             default:
                 break;
         }
-        $query = mysqli_query($conn, "INSERT INTO user (nickname, password, name, fraction_ethnic, avatar, status) VALUES ('$nickname', '$password', '$name', '$fraction - $ethnic', '$image', 'Alive')");
+        $query = mysqli_query($conn, "INSERT INTO user (nickname, password, name, fraction_ethnic, avatar, status, role) VALUES ('$nickname', '$password', '$name', '$fraction - $ethnic', '$image', 'Alive', 'User')");
         if ($query) {
             header("Location: admin_user.php");
         } else {
