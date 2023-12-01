@@ -20,9 +20,9 @@ body, html {
 
 .marleydesc img{
     position: absolute;
-    top: 0%;
-    right: 32%;
-    width: 10%;
+    top: -1%;
+    right: 41%;
+    width: 8%;
 }
 
 .marleydesc::before {
@@ -43,6 +43,8 @@ body, html {
 }
 
 .text{
+    padding: 10px;
+    margin-top: 90px;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -51,16 +53,16 @@ body, html {
     overflow: hidden;
     width: fit-content;
     background-image: url('../assets/images/main-bg.png');
-    background-size: 63% 94%;
+    background-size: 65% 100%;
     background-position: center;
     background-repeat: no-repeat;
     z-index: 2;
 }
 
 .text h1{
-    color: #851D1E;
+    color: #4a316d;
     font-family: 'Source Serif Pro';
-    font-size: 80px;
+    font-size: 50px;
     text-align: center;
     width: 70%;
     margin-bottom: 10px;
@@ -71,7 +73,7 @@ body, html {
 .text p{
     color: #928F8E;
     font-family: 'Source Serif Pro';
-    font-size: 20px;
+    font-size: 14px;
     font-weight: bold;
     text-align: center;
     width: 60%;
@@ -121,4 +123,31 @@ body, html {
     font-style: italic;
     text-align: center;
     font-size: 25px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.item img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.item p {
+    text-align: center;
+    color: white;
+    margin: 0;
 }

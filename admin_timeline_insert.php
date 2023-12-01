@@ -10,9 +10,17 @@ if (!isset($_SESSION['nickname'])) {
     }
 }
 
+$erenStatusQuery = mysqli_query($conn, "SELECT status FROM user WHERE nickname = 'eren'");
+$erenStatus = mysqli_fetch_assoc($erenStatusQuery);
+
+if ($erenStatus['status'] == 'Dead') {
+    echo "<p style='margin: 0 auto; color: red; text-align: center; font-weight: bold; background: black;'>Admin cannot insert timeline because Eren Yeager is Dead!</p>";
+    exit();
+}
+
 if (isset($_POST['insert'])) {
     $place = $_POST['place'];
-    $details = $_POST['details'];
+    $details = mysqli_real_escape_string($conn, $_POST['details']);
     $time = $_POST['time'];
     $undiscovered_death = $_POST['undiscovered_death'];
     $image = $_FILES['image']['name'];
@@ -47,6 +55,9 @@ if (isset($_POST['insert'])) {
 <body>
     <?php include "admin_nav.php" ?>
     <main>
+        <?php
+            if ($erenStatus['status'] != 'Dead') {
+        ?>
         <form method='POST' action="<?php echo $_SERVER['PHP_SELF']; ?>" enctype="multipart/form-data">
             <table>
                 <tr>
@@ -74,6 +85,9 @@ if (isset($_POST['insert'])) {
                 </tr>
             </table>
         </form>
+        <?php
+            }
+        ?>
     </main>
 </body>
 </html>

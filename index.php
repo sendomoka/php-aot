@@ -230,11 +230,11 @@ if (!isset($_SESSION['nickname'])) {
                     </td>
                 </tr>
                 <tr>
-                    <td><h2>Eldia</h2></td>
+                    <td><h2>Eldian</h2></td>
                 </tr>
                 <tr>
                     <td>
-                        <p>Eldia is a nation that is currently located on Paradis Island which is chiefly populated by the Subjects of Ymir, a race that used to be able turn into Titans if injected with a serum.</p>
+                        <p>Eldian is a nation that is currently located on Paradis Island which is chiefly populated by the Subjects of Ymir, a race that used to be able turn into Titans if injected with a serum.</p>
                     </td>
                 </tr>
             </table>
@@ -252,7 +252,7 @@ if (!isset($_SESSION['nickname'])) {
                 </tr>
                 <tr>
                     <td>
-                        <p>Marley is a nation located beyond the Walls and across the ocean from Paradis Island. Marley was once conquered by Eldia in ancient times, but during the Great Titan War, the Marleyans rose up and subjugated all of Eldia's territory with the exception of Paradis Island.</p>
+                        <p>Marley is a nation located beyond the Walls and across the ocean from Paradis Island. Marley was once conquered by Eldian in ancient times, but during the Great Titan War, the Marleyans rose up and subjugated all of Eldian's territory with the exception of Paradis Island.</p>
                     </td>
                 </tr>
             </table>

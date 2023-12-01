@@ -13,7 +13,7 @@ if (!isset($_SESSION['nickname'])) {
 if (isset($_POST['insert'])) {
     $name = $_POST['name'];
     $place = $_POST['place'];
-    $cause = $_POST['cause'];
+    $cause = mysqli_real_escape_string($conn, $_POST['cause']);
     $image = $_FILES['image']['name'];
     $tmp = $_FILES['image']['tmp_name'];
     $path = "assets/images/death/" . $image;
@@ -35,7 +35,7 @@ if (isset($_POST['insert'])) {
         if ($queryinsert) {
             $makedead = mysqli_query($conn, "UPDATE user SET status = 'Dead' WHERE id = '$name'");
             if ($makedead) {
-                echo "<script>alert('Make user death successfully!')</script>";
+                echo "<script>alert('Your Dead!')</script>";
             } else {
                 echo "Error: " . $makedead . "<br>" . mysqli_error($conn);
             }

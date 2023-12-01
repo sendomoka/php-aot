@@ -14,7 +14,7 @@ $id = $_GET['id'];
 if (isset($_POST['update'])) {
     $name = $_POST['name'];
     $place = $_POST['place'];
-    $cause = $_POST['cause'];
+    $cause = mysqli_real_escape_string($conn, $_POST['cause']);
     $image = $_FILES['image'];
     $image_name = $image['name'];
     $image_tmp = $image['tmp_name'];

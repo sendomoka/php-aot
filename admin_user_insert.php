@@ -1,4 +1,4 @@
-a<?php
+<?php
 session_start();
 include "config/models.php";
 
@@ -11,36 +11,39 @@ if (!isset($_SESSION['nickname'])) {
 }
 
 if (isset($_POST['insert'])) {
+    $nickname = $_POST['nickname'];
+    $password = $_POST['password'];
     $name = $_POST['name'];
-    $place = $_POST['place'];
-    $cause = $_POST['cause'];
+    $fraction = $_POST['fraction'];
+    $ethnic = $_POST['ethnic'];
     $image = $_FILES['image']['name'];
     $tmp = $_FILES['image']['tmp_name'];
-    $path = "assets/images/death/" . $image;
-    $userquery = mysqli_query($conn, "SELECT * FROM user WHERE name = '$name'");
-    $userdata = mysqli_fetch_array($userquery);
-    $name = $userdata['id'];
-    $checkdead = mysqli_query($conn, "SELECT * FROM death WHERE userid = '$name'");
-    $isdead = mysqli_fetch_assoc($checkdead);
-    if ($isdead) {
-        echo "<script>alert('This character is already dead!')</script>";
-        echo "<script>window.location.href='admin_user_insert.php'</script>";
-        exit();
-    }
+    $path = "assets/images/profile_pic/" . $image;
     if (move_uploaded_file($tmp, $path)) {
-        $timelinequery = mysqli_query($conn, "SELECT * FROM timeline WHERE place = '$place'");
-        $timelinedata = mysqli_fetch_array($timelinequery);
-        $place = $timelinedata['id'];
-        $queryinsert = mysqli_query($conn, "INSERT INTO death (userid, timelineid, cause, image) VALUES ('$name', '$place', '$cause', '$image')");
-        if ($queryinsert) {
-            $makedead = mysqli_query($conn, "UPDATE user SET status = 'Dead' WHERE id = '$name'");
-            if ($makedead) {
-                echo "<script>alert('Make user death successfully!')</script>";
-            } else {
-                echo "Error: " . $makedead . "<br>" . mysqli_error($conn);
-            }
+        switch ($fraction) {
+            case 'Yeagerist':
+                $ethnic = 'Eldian';
+                break;
+            case 'Alliance':
+                break;
+            case 'Warrior':
+                $ethnic = 'Marley';
+                break;
+            case 'Anti Marleyan':
+                $ethnic = 'Marley';
+                break;
+            case 'Military':
+                break;
+            case 'Civil':
+                break;
+            default:
+                break;
+        }
+        $query = mysqli_query($conn, "INSERT INTO user (nickname, password, name, fraction_ethnic, avatar, status) VALUES ('$nickname', '$password', '$name', '$fraction - $ethnic', '$image', 'Alive')");
+        if ($query) {
+            header("Location: admin_user.php");
         } else {
-            echo "Error: " . $queryinsert . "<br>" . mysqli_error($conn);
+            echo "Error: " . $query . "<br>" . mysqli_error($conn);
         }
     }
 }
@@ -65,34 +68,31 @@ if (isset($_POST['insert'])) {
         <form method='POST' action="<?php echo $_SERVER['PHP_SELF']; ?>" enctype="multipart/form-data">
             <table>
                 <tr>
+                    <td>Nickname</td>
+                    <td><input type="text" name="nickname" required></td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td><input type="text" name="password" required></td>
+                </tr>
+                <tr>
                     <td>Name</td>
-                    <td><input type="text" name="cause" required></td>
+                    <td><input type="text" name="name" required></td>
                 </tr>
                 <tr>
                     <td>Fraction - Ethnic</td>
                     <td>
-                        <select name="name" required>
-                            <option value="">-- Select Fraction - Ethnic --</option>
-                            <?php
-                            $query = mysqli_query($conn, "SELECT * FROM user");
-                            while ($data = mysqli_fetch_array($query)) {
-                                echo "<option value='" . $data['name'] . "'>" . $data['name'] . "</option>";
-                            }
-                            ?>
+                        <select name="fraction" id="fractionSelect" required>
+                            <option value="Yeagerist">Yeagerist</option>
+                            <option value="Alliance">Alliance</option>
+                            <option value="Warrior">Warrior</option>
+                            <option value="Anti Marleyan">Anti Marleyan</option>
+                            <option value="Military">Military</option>
+                            <option value="Civil">Civil</option>
                         </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Status</td>
-                    <td>
-                        <select name="place" required>
-                            <option value="">-- Select Status --</option>
-                            <?php
-                            $query = mysqli_query($conn, "SELECT * FROM timeline");
-                            while ($data = mysqli_fetch_array($query)) {
-                                echo "<option value='" . $data['place'] . "'>" . $data['place'] . "</option>";
-                            }
-                            ?>
+                        <select name="ethnic" id="ethnicSelect" style="display: none; margin-top: 10px">
+                            <option value="Eldian">Eldian</option>
+                            <option value="Marley">Marley</option>
                         </select>
                     </td>
                 </tr>
@@ -107,4 +107,15 @@ if (isset($_POST['insert'])) {
         </form>
     </main>
 </body>
+<script>
+    document.getElementById('fractionSelect').addEventListener('change', function() {
+        var fractionValue = this.value;
+        var ethnicSelect = document.getElementById('ethnicSelect');
+        ethnicSelect.selectedIndex = 0;
+        ethnicSelect.style.display = 'none';
+        if (fractionValue === 'Alliance' || fractionValue === 'Military' || fractionValue === 'Civil') {
+            ethnicSelect.style.display = 'block';
+        }
+    });
+</script>
 </html>

@@ -11,20 +11,13 @@ if (!isset($_SESSION['nickname'])) {
 }
 
 if (isset($_GET['id'])) {
-    $id = $_GET['id'];
-    $queryuser = mysqli_query($conn, "SELECT userid FROM death WHERE id = '$id'");
-    $datauser = mysqli_fetch_assoc($queryuser);
-    $userid = $datauser['userid'];
-    $querydelete = mysqli_query($conn, "DELETE FROM death WHERE id = '$id'");
-    if ($querydelete) {
-        $makealive = mysqli_query($conn, "UPDATE user SET status = 'Alive' WHERE id = '$userid'");
-        if ($makealive) {
-            echo "User is alive now.";
-        } else {
-            echo "Error: " . $makealive . "<br>" . mysqli_error($conn);
-        }
+    $userid = $_GET['id'];
+    $deletedeathuser = mysqli_query($conn, "DELETE FROM death WHERE userid = '$userid'");
+    $deleteuser = mysqli_query($conn, "DELETE FROM user WHERE id = '$userid'");
+    if ($deletedeathuser && $deleteuser) {
+        header("Location: admin_user.php");
     } else {
-        echo "Error: " . $querydelete . "<br>" . mysqli_error($conn);
+        echo "Error: " . mysqli_error($conn);
     }
 }
 ?>
@@ -35,6 +28,7 @@ if (isset($_GET['id'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User | Admin | AoT Rumbling</title>
     <link rel="stylesheet" href="css/admin_main.css">
+    <link rel="stylesheet" href="css/admin_user.css">
     <style>
         a[href="admin_user.php"] {
             background: gray;
@@ -51,18 +45,28 @@ if (isset($_GET['id'])) {
             </a>
             <div class="top-right">
                 <div class="filter">
-                    <a href="javascript:void(0)" onclick="clearFilter()">Status ⇵</a>
+                    <a href="javascript:void(0)" onclick="clearFilter()">Fraction - Ethnic ⇵</a>
                     <div class="filter-item">
                         <?php
-                            $query = mysqli_query($conn, "SELECT DISTINCT place FROM timeline");
+                            $query = mysqli_query($conn, "SELECT DISTINCT fraction_ethnic FROM user");
                             while($row = mysqli_fetch_array($query)){
-                                echo "<a href='?place=$row[place]'>$row[place]</a>";
+                                echo "<a href='?fraction_ethnic=$row[fraction_ethnic]'>$row[fraction_ethnic]</a>";
                             }
                         ?>
                     </div>
                 </div>
-                
-                <form action="admin_death.php" method="get">
+                <div class="filter">
+                    <a href="javascript:void(0)" onclick="clearFilter()">Status ⇵</a>
+                    <div class="filter-item">
+                        <?php
+                            $query = mysqli_query($conn, "SELECT DISTINCT status FROM user");
+                            while($row = mysqli_fetch_array($query)){
+                                echo "<a href='?status=$row[status]'>$row[status]</a>";
+                            }
+                        ?>
+                    </div>
+                </div>
+                <form action="admin_user.php" method="get">
                     <input type="text" name="insearch" placeholder="Search">
                     <button type="submit" name="btnsearch">Search</button>
                 </form>
@@ -78,48 +82,48 @@ if (isset($_GET['id'])) {
                 <th>Action</th>
             </tr>
             <?php
-                $page = isset($_GET['page']) ? $_GET['page'] : 1;
-                $no = ($page - 1) * 7 + 1;
-                if (isset($_GET['btnsearch'])) {
-                    $search = $_GET['insearch'];
-                    $query = "SELECT death.id, user.name, COALESCE(timeline.place, '(not found)') AS place, death.cause FROM death
-                    INNER JOIN user ON death.userid = user.id
-                    LEFT JOIN timeline ON death.timelineid = timeline.id
-                    WHERE user.name LIKE '%$search%' OR timeline.place LIKE '%$search%' OR death.cause LIKE '%$search%'";
-                } else if (isset($_GET['place'])) {
-                    $place = $_GET['place'];
-                    $query = "SELECT death.id, user.name, COALESCE(timeline.place, '(not found)') AS place, death.cause FROM death
-                    INNER JOIN user ON death.userid = user.id
-                    LEFT JOIN timeline ON death.timelineid = timeline.id
-                    WHERE timeline.place = '$place'";
+            $page = isset($_GET['page']) ? $_GET['page'] : 1;
+            $no = ($page - 1) * 7 + 1;
+            if (isset($_GET['btnsearch'])) {
+                $search = $_GET['insearch'];
+                $query = "SELECT * FROM user WHERE name LIKE '%$search%' OR fraction_ethnic LIKE '%$search%' OR status LIKE '%$search%'";
+            } else if (isset($_GET['fraction_ethnic'])) {
+                $fraction_ethnic = $_GET['fraction_ethnic'];
+                $query = "SELECT * FROM user WHERE fraction_ethnic = '$fraction_ethnic'";
+            } else if (isset($_GET['status'])) {
+                $status = $_GET['status'];
+                $query = "SELECT * FROM user WHERE status = '$status'";
+            } else {
+                $query = "SELECT * FROM user";
+            }
+            $result = mysqli_query($conn, $query);
+            while($row = mysqli_fetch_array($result)) {
+                if ($row['id'] == 1) {
+                    echo "<tr style='background: rgba(175, 163, 65, 0.2)'>";
+                } else if ($row['status'] == 'Dead') {
+                    echo "<tr style='background: rgba(255, 0, 0, 0.05)'>";
+                } else if ($row['status'] == 'Alive') {
+                    echo "<tr style='background: rgba(0, 255, 0, 0.05)'>";
                 } else {
-                    $query = "SELECT death.id, user.name, COALESCE(timeline.place, '(not found)') AS place, death.cause FROM death
-                    INNER JOIN user ON death.userid = user.id
-                    LEFT JOIN timeline ON death.timelineid = timeline.id";
+                    echo "<tr>";
                 }
-                $result = mysqli_query($conn, $query);
-                while($row = mysqli_fetch_array($result)){
                     echo "
-                        <tr>
-                            <td>$no.</td>
-                            <td>$row[name]</td>
-                            <td>$row[place]</td>
-                            <td>$row[cause]</td>
-                            <td>
-                                <a href='admin_death_detail.php?id=$row[id]'>
-                                    <img src='assets/images/detailicon.png' alt='detail'>
-                                </a>
-                                <a href='admin_death_update.php?id=$row[id]'>
-                                    <img src='assets/images/editicon.png' alt='edit'>
-                                </a>
-                                <a href='?id=$row[id]'>
-                                    <img src='assets/images/deleteicon.png' alt='delete'>
-                                </a>
-                            </td>
-                        </tr>
-                    ";
-                    $no++;
-                }
+                        <td>$no.</td>
+                        <td><img src='assets/images/profile_pic/$row[avatar]' alt='avatar'></td>
+                        <td>$row[name]</td>
+                        <td>$row[fraction_ethnic]</td>
+                        <td>$row[status]</td>
+                        <td>
+                            <a href='admin_user_update.php?id=$row[id]'>
+                                <img src='assets/images/editicon.png' alt='edit'>
+                            </a>
+                            <a href='?id=$row[id]'>
+                                <img src='assets/images/deleteicon.png' alt='delete'>
+                            </a>
+                    </tr>
+                ";
+                $no++;
+            }
             ?>
         </table>
         <div class="pagination">

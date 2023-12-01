@@ -12,43 +12,41 @@ if (!isset($_SESSION['nickname'])) {
 
 $id = $_GET['id'];
 if (isset($_POST['update'])) {
+    $nickname = $_POST['nickname'];
+    $password = $_POST['password'];
     $name = $_POST['name'];
-    $place = $_POST['place'];
-    $cause = $_POST['cause'];
+    $fraction_ethnic = $_POST['fraction_ethnic'];
+    list($fraction, $ethnic) = explode(' - ', $fraction_ethnic);
     $image = $_FILES['image'];
     $image_name = $image['name'];
     $image_tmp = $image['tmp_name'];
     $image_name = time() . "-" . $image_name;
-    $image_path = $_SERVER['DOCUMENT_ROOT'] . "/assets/images/death/" . $image_name;
+    $image_path = $_SERVER['DOCUMENT_ROOT'] . "/assets/images/profile_pic/" . $image_name;
     if (move_uploaded_file($image_tmp, $image_path)) {
-        $query = mysqli_query($conn, "UPDATE death SET timelineid = '$place', cause = '$cause', image = '$image_name' WHERE id = '$id'");
-        if ($query) {
-            header("Location: admin_death.php");
-        } else {
-            echo "Error: " . $query . "<br>" . mysqli_error($conn);
-        }
+        $image_name = $image_name;
     } else {
-        echo "Error uploading image.";
+        $image_name = $data['image'];
+    }
+    $query = mysqli_query($conn, "UPDATE user SET nickname = '$nickname', password = '$password', name = '$name', fraction_ethnic = '$fraction_ethnic', avatar = '$image_name' WHERE id = '$id'");
+    if ($query) {
+        header("Location: admin_user.php");
+    } else {
+        echo "Error: " . $query . "<br>" . mysqli_error($conn);
     }
 }
-$queryname = mysqli_query($conn, "SELECT * FROM user");
-$queryplace = mysqli_query($conn, "SELECT * FROM timeline");
-$querydeath = mysqli_query($conn, "SELECT death.*, user.name, user.fraction_ethnic, COALESCE(timeline.place, '(not found)') as place, timeline.time FROM death
-INNER JOIN user ON death.userid = user.id
-LEFT JOIN timeline ON death.timelineid = timeline.id
-WHERE death.id = '$id'");
-$data = mysqli_fetch_array($querydeath);
+$query = mysqli_query($conn, "SELECT * FROM user WHERE id = '$id'");
+$data = mysqli_fetch_array($query);
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Update Death | Admin | AoT Rumbling</title>
+    <title>Update User | Admin | AoT Rumbling</title>
     <link rel="stylesheet" href="css/admin_main.css">
     <link rel="stylesheet" href="css/admin_insert.css">
     <style>
-        a[href="admin_death.php"] {
+        a[href="admin_user.php"] {
             background: gray;
         }
     </style>
@@ -60,41 +58,34 @@ $data = mysqli_fetch_array($querydeath);
             <form method='POST' action="<?php $_SERVER['PHP_SELF']; ?>" enctype="multipart/form-data">
                 <table>
                     <tr>
+                        <td>Nickname</td>
+                        <td><input type="text" name="nickname" value="<?= $data['nickname'] ?>" required></td>
+                    </tr>
+                    <tr>
+                        <td>Password</td>
+                        <td><input type="text" name="password" value="<?= $data['password'] ?>" required></td>
+                    </tr>
+                    <tr>
                         <td>Name</td>
                         <td><input type="text" name="name" value="<?= $data['name'] ?>" required></td>
                     </tr>
                     <tr>
                         <td>Fraction - Ethnic</td>
                         <td>
-                            <select name="name" required>
-                                <option value="">-- Select Fraction - Ethnic --</option>
-                                <?php
-                                while ($dataname = mysqli_fetch_array($queryname)) {
-                                    if ($dataname['id'] == $data['userid']) {
-                                        echo "<option value='" . $dataname['id'] . "' selected>" . $dataname['name'] . "</option>";
-                                    } else {
-                                        echo "<option value='" . $dataname['id'] . "'>" . $dataname['name'] . "</option>";
-                                    }
-                                }
-                                ?>
+                            <select name="fraction_ethnic" id="fractionEthnicSelect" onchange="updateEthnicSelect()">
+                                <option value="Yeagerist" <?= ($data['fraction_ethnic'] === 'Yeagerist') ? 'selected' : '' ?>>Yeagerist</option>
+                                <option value="Alliance" <?= ($data['fraction_ethnic'] === 'Alliance') ? 'selected' : '' ?>>Alliance</option>
+                                <option value="Warrior" <?= ($data['fraction_ethnic'] === 'Warrior') ? 'selected' : '' ?>>Warrior</option>
+                                <option value="Anti Marleyan" <?= ($data['fraction_ethnic'] === 'Anti Marleyan') ? 'selected' : '' ?>>Anti Marleyan</option>
+                                <option value="Military" <?= ($data['fraction_ethnic'] === 'Military') ? 'selected' : '' ?>>Military</option>
+                                <option value="Civil" <?= ($data['fraction_ethnic'] === 'Civil') ? 'selected' : '' ?>>Civil</option>
                             </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Status</td>
-                        <td>
-                            <select name="place" required>
-                                <option value="">-- Select Status --</option>
+                            <select name="ethnic" id="ethnicSelect" style="display: none; margin-top: 10px">
                                 <?php
-                                mysqli_data_seek($queryplace, 0);
-                                while ($dataplace = mysqli_fetch_array($queryplace)) {
-                                    if ($dataplace['id'] == $data['timelineid']) {
-                                        echo "<option value='" . $dataplace['id'] . "' selected>" . $dataplace['place'] . "</option>";
-                                    } else {
-                                        echo "<option value='" . $dataplace['id'] . "'>" . $dataplace['place'] . "</option>";
-                                    }
-                                }
+                                $ethnic = (isset($data['ethnic'])) ? $data['ethnic'] : '';
                                 ?>
+                                <option value="Eldian" <?= ($ethnic === 'Eldian') ? 'selected' : '' ?>>Eldian</option>
+                                <option value="Marley" <?= ($ethnic === 'Marley') ? 'selected' : '' ?>>Marley</option>
                             </select>
                         </td>
                     </tr>
@@ -102,7 +93,7 @@ $data = mysqli_fetch_array($querydeath);
                         <td>Avatar</td>
                         <td>
                             <input type="file" name="image" accept="image/*" required>
-                            <img src="../assets/images/death/<?= $data['image'] ?>" style="width: 70px"><?= $data['image'] ?>
+                            <img src="../assets/images/profile_pic/<?= $data['avatar'] ?>" style="width: 70px"><?= $data['avatar'] ?>
                         </td>
                     </tr>
                     <tr>
@@ -113,4 +104,21 @@ $data = mysqli_fetch_array($querydeath);
         <?php } else { echo "Not Found."; } ?>
     </main>
 </body>
+<script>
+    function updateEthnicSelect() {
+        var fractionEthnicSelect = document.getElementById('fractionEthnicSelect');
+        var ethnicSelect = document.getElementById('ethnicSelect');
+        ethnicSelect.style.display = 'none';
+        switch (fractionEthnicSelect.value) {
+            case 'Alliance':
+            case 'Military':
+            case 'Civil':
+                ethnicSelect.style.display = 'block';
+                break;
+            default:
+                break;
+        }
+    }
+    updateEthnicSelect();
+</script>
 </html>

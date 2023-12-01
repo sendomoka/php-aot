@@ -13,8 +13,7 @@ if (!isset($_SESSION['nickname'])) {
 $id = $_GET['id'];
 if (isset($_POST['update'])) {
     $place = $_POST['place'];
-    $details = $_POST['details'];
-    $time = $_POST['time'];
+    $details = mysqli_real_escape_string($conn, $_POST['details']);
     $undiscovered_death = $_POST['undiscovered_death'];
     $image = $_FILES['image'];
     $image_name = $image['name'];

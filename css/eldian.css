@@ -63,15 +63,15 @@ body, html {
 
 .eldiandesc img{
     position: absolute;
-    top: 9%;
-    right: 33%;
-    width: 10%;
+    top: -1%;
+    right: 41%;
+    width: 8%;
 }
 
 .text h1{
-    color: #4A316D;
+    color: #851d1e;
     font-family: 'Source Serif Pro';
-    font-size: 80px;
+    font-size: 50px;
     text-align: center;
     width: 70%;
     position: relative;
@@ -84,7 +84,7 @@ body, html {
 .text p{
     color: #928F8E;
     font-family: 'Source Serif Pro';
-    font-size: 20px;
+    font-size: 14px;
     font-weight: bold;
     text-align: center;
     width: 60%;
@@ -135,4 +135,31 @@ body, html {
     font-style: italic;
     text-align: center;
     font-size: 25px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.item img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.item p {
+    text-align: center;
+    color: white;
+    margin: 0;
 }
