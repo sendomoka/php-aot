@@ -1,3 +1,7 @@
+DROP DATABASE IF EXISTS attackontitan_rumbling;
+CREATE DATABASE attackontitan_rumbling;
+USE attackontitan_rumbling;
+
 CREATE TABLE user (
     id int PRIMARY KEY AUTO_INCREMENT,
     nickname varchar(50),
@@ -13,7 +17,8 @@ CREATE TABLE timeline (
     id int PRIMARY KEY AUTO_INCREMENT,
     place varchar(50),
     details varchar(255),
-    time int,
+    time varchar(10),
+    undiscovered_death int,
     image varchar(255)
 );
 
@@ -22,6 +27,7 @@ CREATE TABLE death (
     userid int,
     timelineid int,
     cause varchar(255),
+    image varchar(255),
     FOREIGN KEY (userid) REFERENCES user(id),
     FOREIGN KEY (timelineid) REFERENCES timeline(id)
 );
