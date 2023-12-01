@@ -1,0 +1,48 @@
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+tr:hover {
+    background: rgba(255, 255, 255, 0);
+
+}
+td {
+    text-align: left;
+    padding: 14px;
+}
+td[colspan="2"] {
+    text-align: center;
+}
+input, select {
+    width: 100%;
+    height: 40px;
+    cursor: text;
+    background: rgba(255, 255, 255, 0.3);
+    padding: 0 10px;
+}
+select option {
+    background: rgba(0 0 0 / 50%);
+}
+input:focus {
+    outline: none;
+}
+input[type="file"] {
+    background: rgba(255, 255, 255, 0);
+    height: fit-content;
+    padding: 0;
+}
+input[type="submit"] {
+    background: #468662;
+    cursor: pointer;
+}
+input[type="submit"]:hover {
+    background: #3e7453;
+}
+input[name="update"] {
+    background: #afa341;
+}
+input[name="update"]:hover {
+    background: #9b7e3a;
+}

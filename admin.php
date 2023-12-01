@@ -52,9 +52,7 @@ if (!isset($_SESSION['nickname'])) {
             </select>
         </div>
         <input type="search" id="searchBar" placeholder="Search...">
-
         <table id="contentTable">
-
             <tr>
                 <th>No</th>
                 <th>Place</th>
@@ -67,9 +65,9 @@ if (!isset($_SESSION['nickname'])) {
                 <td>Mitras, Paradise</td>
                 <td>Day 1</td>
                 <td>
-                    <img src="assets/images/detailicon.png" name="detailtimeline" alt="icon" class="action-img">
-                    <img src="assets/images/editicon.png"  name="edittimeline" alt="icon" class="action-img">
-                    <img src="assets/images/deleteicon.png" name="deletetimeline" alt="icon" class="action-img">
+                    <img src="assets/images/detailicon.png" name="detail" alt="icon" class="action-img">
+                    <img src="assets/images/editicon.png"  name="edit" alt="icon" class="action-img">
+                    <img src="assets/images/deleteicon.png" name="delete" alt="icon" class="action-img">
                 </td>
             </tr>
 
@@ -77,61 +75,69 @@ if (!isset($_SESSION['nickname'])) {
     </div>
 
     <div class="content2-1" id="content-2-1">
-        <form method="post">
+        <form name="formInsertTimeline" method="POST" action="<?php $_SERVER['PHP_SELF'] ?>" enctype="multipart/form-data">
             <div class="form-group">
-
                 <div class="input-group-place">
                     <p>Place</p>
-                    <input type="text" name="place">
+                    <input type="text" name="place" style="margin-left: 102px" required>
                 </div>
-                
                 <div class="input-group-detail">
-                    <p>Detail</p>
-                    <textarea name="detail" id="detail" cols="30" rows="7"></textarea>
+                    <p>Details</p>
+                    <textarea name="details" id="detail" cols="30" rows="5" style="margin-left: 92px" required></textarea>
                 </div>
-
                 <div class="input-group-time">
                     <p>Time</p>
-                    <input type="text" name="time">
+                    <input type="text" name="time" style="margin-left: 102px" required>
                 </div>
-
+                <div class="input-group-undiscovered">
+                    <p>Undiscovered Death</p>
+                    <input type="number" name="undiscovered_death" required>
+                </div>
                 <div class="input-group-image">
                     <p>Image</p>
-                    <label for="timelineUpload" class="timeline-upload-button">Choose Image</label>
-                    <input type="file" id="timelineUpload" class="timeline-upload" name="timelineimg" accept=".png, .jpg, .jpeg" style="display: none;">
+                    <label for="timelineUpload" class="timeline-upload-button" style="margin-right: 250px">Choose Image</label>
+                    <input type="file" id="timelineUpload" class="timeline-upload" name="image" accept=".png, .jpg, .jpeg" style="display: none;" required>
                 </div>
-
-                <input type="submit" value="Add Data">
+                <input type="submit" name="submitInsertTimeline" value="Add Data" style="width: fit-content; padding: 15px 236px;">
             </div>
         </form>
     </div>
 
-    <div class="content2-2" id="content-2-2">
-        <form method="post">
+    <?php
+    $showUpdateForm = false;
+    if (isset($_GET['timelineUpdate'])) {
+        $showUpdateForm = true;
+        $updateTimelineId = $_GET['timelineUpdate'];
+        $updateTimelineData = mysqli_query($conn, "SELECT * FROM timeline WHERE id = '$updateTimelineId'");
+        $data = mysqli_fetch_assoc($updateTimelineData);
+    }
+    ?>
+    <div class="content2-2" id="content-2-2" <?= $showUpdateForm ? '' : 'style="display:none"' ?>>
+        <form name="formUpdateTimeline" method="POST" action="<?php $_SERVER['PHP_SELF'] ?>" enctype="multipart/form-data">
+            <input type="hidden" name="id" value="<?= $data['id'] ?>">
             <div class="form-group">
-
                 <div class="input-group-place">
                     <p>Place</p>
-                    <input type="text" name="place" value="Mitras, Paradise">
+                    <input type="text" name="place" style="margin-left: 102px" value="<?= $data['place'] ?>">
                 </div>
-                
                 <div class="input-group-detail">
-                    <p>Detail</p>
-                    <textarea name="detail" id="detail" cols="30" rows="7">Mitras is the opulent capital city and center of power within Wall Sina, where nobles and aristocrats enjoy extravagant wealth detached from commoners struggling daily against the Titan threat outside.</textarea>
+                    <p>Details</p>
+                    <textarea name="details" id="detail" cols="30" rows="5" style="margin-left: 92px"><?= $data['details'] ?></textarea>
                 </div>
-
                 <div class="input-group-time">
                     <p>Time</p>
-                    <input type="text" name="time" value="Day 1">
+                    <input type="text" name="time" style="margin-left: 102px" value="<?= $data['time'] ?>">
                 </div>
-
+                <div class="input-group-undiscovered">
+                    <p>Undiscovered Death</p>
+                    <input type="number" name="undiscovered_death" value="<?= $data['undiscovered_death'] ?>">
+                </div>
                 <div class="input-group-image">
                     <p>Image</p>
-                    <label for="timelineUpload" class="timeline-upload-button">Choose Image</label>
-                    <input type="file" id="timelineUpload" class="timeline-upload" name="timelineimg" accept=".png, .jpg, .jpeg" style="display: none;">
+                    <label for="timelineUpload" class="timeline-upload-button" style="margin-right: 250px">Choose Image</label>
+                    <input type="file" id="timelineUpload" class="timeline-upload" name="image" accept=".png, .jpg, .jpeg" style="display: none;" value="<?= $data['image'] ?>">
                 </div>
-
-                <input type="submit" value="Edit Data">
+                <input type="submit" name="submitUpdateTimeline" value="Update Data" style="width: fit-content; padding: 15px 236px;">
             </div>
         </form>
     </div>
@@ -529,7 +535,31 @@ if (!isset($_SESSION['nickname'])) {
             </div>
         </form>
     </div>
+    <script>
+        // Menampilkan content-1 secara default
+        document.getElementById('content-2').style.display = 'block';
 
+        // Menangani event klik pada tombol-tombol di sisi kiri
+        var buttons = document.querySelectorAll('.kiri button');
+
+        buttons.forEach(function(button) {
+            button.addEventListener('click', function() {
+                buttons.forEach(function(btn) {
+                    btn.classList.remove('active');
+                });
+
+                this.classList.add('active');
+
+                var contents = document.querySelectorAll('[id^="content-"]');
+                contents.forEach(function(content) {
+                    content.style.display = 'none';
+                });
+
+                var contentId = 'content-' + this.id.replace('btn', '');
+                document.getElementById(contentId).style.display = 'block';
+            });
+        });
+    </script>
     <script src="js/admin.js"> </script>
 </body>
 </html>

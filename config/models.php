@@ -38,14 +38,14 @@ function login ($nickname, $password) {
         $_SESSION['status'] = $user['status'];
         $_SESSION['role'] = $user['role'];
         if ($user['status'] == 'Alive') {
-            echo '<script>alert("Selamat datang!");</script>';
+            echo '<script>alert("Welcome!");</script>';
             header("Location: index.php");
             exit();
         } else {
-            echo '<script>alert("Anda sudah mati!");</script>';
+            echo '<script>alert("You already dead!");</script>';
         }
     } else {
-        echo '<script>alert("Nickname atau password salah!");</script>';
+        echo '<script>alert("Nickname or password wrong!");</script>';
     }
 }
 
@@ -105,9 +105,76 @@ function editProfile_handling($id, $nickname, $name, $password, $avatar) {
         $_SESSION['name'] = $name;
         $_SESSION['password'] = $password;
         $_SESSION['avatar'] = $avatar;
-        echo '<script>alert("Berhasil mengedit profile!");</script>';
+        echo '<script>alert("Edit Profile Success!");</script>';
     } else {
-        echo '<script>alert("Gagal mengedit profile!");</script>';
+        echo '<script>alert("Edit Profile Failed!");</script>';
+    }
+}
+
+function insertTimeline($place, $details, $time, $undiscovered_death, $image) {
+    global $conn;
+    $image = mysqli_real_escape_string($conn, $image);
+    if ($_FILES['image']['error'] == 0) {
+        $image = $_FILES['image']['name'];
+        $tmp = $_FILES['image']['tmp_name'];
+        $path = "assets/images/timeline/" . $image;
+        move_uploaded_file($tmp, $path);
+    }
+    $sql = "INSERT INTO timeline (place, details, time, undiscovered_death, image) VALUES ('$place', '$details', '$time', '$undiscovered_death', '$image')";
+    return mysqli_query($conn, $sql);
+}
+
+if (isset($_POST['submitInsertTimeline'])) {
+    $place = $_POST['place'];
+    $details = $_POST['details'];
+    $time = $_POST['time'];
+    $undiscovered_death = $_POST['undiscovered_death'];
+    $image = $_FILES['image']['name'];
+    $result = insertTimeline($place, $details, $time, $undiscovered_death, $image);
+    if ($result) {
+        echo '<script>alert("Add Timeline Data Success!");</script>';
+    } else {
+        echo '<script>alert("Add Timeline Data Failed!");</script>';
+    }
+}
+
+function getTimelineById($id) {
+    global $conn;
+    $id = mysqli_real_escape_string($conn, $id);
+    $sql = "SELECT * FROM timeline WHERE id = '$id'";
+    $query = mysqli_query($conn, $sql);
+    return mysqli_fetch_assoc($query);
+}
+
+function updateTimeline($id, $place, $details, $time, $undiscovered_death, $image) {
+    global $conn;
+    if ($_FILES['image']['error'] == 0) {
+        $image = $_FILES['image']['name'];
+        $tmp = $_FILES['image']['tmp_name'];
+        $path = "assets/images/timeline/" . $image;
+        move_uploaded_file($tmp, $path);
+    }
+    $sql = "UPDATE timeline SET place = '$place', details = '$details', time = '$time', undiscovered_death = '$undiscovered_death'";
+    if ($_FILES['image']['error'] == 0) {
+        $sql .= ", image = '$image'";
+    }
+    $sql .= " WHERE id = '$id'";
+
+    return mysqli_query($conn, $sql);
+ }
+
+if (isset($_POST['submitUpdateTimeline'])) {
+    $id = $_POST['id'];
+    $place = $_POST['place'];
+    $details = $_POST['details'];
+    $time = $_POST['time'];
+    $undiscovered_death = $_POST['undiscovered_death'];
+    $image = $_FILES['image']['name'];
+    $result = updateTimeline($id, $place, $details, $time, $undiscovered_death, $image);
+    if ($result) {
+        echo '<script>alert("Update Timeline Data Success!");</script>';
+    } else {
+        echo '<script>alert("Update Timeline Data Failed!");</script>';
     }
 }
 ?>

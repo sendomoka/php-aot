@@ -166,7 +166,7 @@ body{
     color: white;
     margin-top: 2px;
     margin-bottom: 8px;
-    top: -90%;
+    top: -115%;
     left: 86.5%;
 }
 
@@ -175,7 +175,7 @@ body{
     font-size: 0.9em;
     color: gray;
     margin-bottom: 10px;
-    top: -100%;
+    top: -125%;
     left: 86.5%;
 }
 
@@ -205,7 +205,7 @@ body{
     margin-left: -12px;
 }
 
-.input-group-avatar, .input-group-2, .input-group-nick, .input-group-name, .input-group-pw, .input-group-place, .input-group-detail, .input-group-time, .input-group-image, 
+.input-group-avatar, .input-group-2, .input-group-nick, .input-group-name, .input-group-pw, .input-group-place, .input-group-detail, .input-group-time, .input-group-undiscovered, .input-group-image, 
 .input-group-fraeth, .input-group-status, .input-group-cause, .input-group-timeline{
     display: flex;
     flex-direction: row;
@@ -246,7 +246,7 @@ body{
     margin-right: 80px;
 }
 
-input[type="text"], input[type="password"] {
+input[type="number"], input[type="text"], input[type="password"] {
     align-items: center;
     width: 30%;
     padding: 12px 20px;
@@ -523,14 +523,14 @@ input[type="text"], input[type="password"] {
 .content2-1, .content2-2, .content2-3{
     display: none;
     position: absolute;
-    margin-left: 39%;
-    top: 13%;
+    margin-left: 36%;
+    top: 8%;
     width: 83%;
     height: 90%;
     overflow: hidden;
 }
 
-.input-group-place p, .input-group-detail p, .input-group-time p, .input-group-image p{
+.input-group-place p, .input-group-detail p, .input-group-time p, .input-group-undiscovered p, .input-group-image p{
     margin-right: 50px;
 }
 
@@ -545,7 +545,6 @@ input[type="text"], input[type="password"] {
     font-size: 16px;
     width: 30.5%;
     height: 40px;
-    border-radius: 5px;
     position: relative;
     right: 31.5%;
 }
@@ -564,19 +563,16 @@ input[type="text"], input[type="password"] {
     width: 38%;
     padding: 12px 20px;
     margin: 8px 0;
-    box-sizing: border-box;
     background-color: #A43F39;
     cursor: pointer;
     color: white;
     font-family: 'Source Serif Pro';
     font-size: 16px;
     font-weight: bold;
-    border-radius: 5px;
 }
 
 .content2-1 input[type="submit"]:hover{
-    color: black;
-    background-color: #00CC08;
+    background-color: #cc514a;
 }
 
 .content2-2 input[type="submit"]:hover{
@@ -589,11 +585,9 @@ textarea {
     width: 30%;
     padding: 12px 20px;
     margin: 8px 0;
-    box-sizing: border-box;
     background-color: #373737;
     color: white;
     font-size: 15px;
-    border-radius: 5px;
 }
 
 .content2-3{

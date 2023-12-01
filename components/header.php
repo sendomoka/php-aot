@@ -145,7 +145,7 @@
                 <div class="dropdown-content">
                     <?php
                     if (isset($_SESSION['role']) && $_SESSION['role'] === 'Admin') {
-                        echo '<a class="admin" href="admin.php">Admin Panel</a>';
+                        echo '<a class="admin" href="admin_timeline.php">Admin Panel</a>';
                     }
                     ?>
                     <a class="edit" href="editprofile.php?id=<?= isset($_SESSION['id']) ? $_SESSION['id'] : '' ?>">Edit Profile</a>

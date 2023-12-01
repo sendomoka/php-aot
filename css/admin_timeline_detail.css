@@ -1,0 +1,32 @@
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+main img {
+    height: 200px;
+}
+main .text {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 90%;
+    margin: 20px;
+}
+main .text .sub {
+    display: flex;
+    gap: 10px;
+}
+main .text .sub p:first-child {
+    color: #afa341;
+}
+main .text .sub p:last-child {
+    color: #a43f39;
+}
+main .text h1 {
+    margin-bottom: 10px;
+}
+main .text p {
+    color: #afaaaa;
+}
